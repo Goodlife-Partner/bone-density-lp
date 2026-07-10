@@ -116,6 +116,13 @@ img{max-width:100%;display:block;}
   font-size:clamp(18px,2.4vw,26px);letter-spacing:.08em;margin-top:12px;
 }
 .brand-note{font-family:"Zen Kaku Gothic New",sans-serif;font-size:13.5px;color:rgba(247,243,234,.82);letter-spacing:.03em;margin-top:12px;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:9px;margin-top:20px;
+  background:rgba(216,165,91,.16);border:1px solid rgba(216,165,91,.5);
+  color:var(--amber-soft);font-size:13px;font-weight:700;letter-spacing:.05em;
+  padding:8px 16px;border-radius:999px;text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.hero-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:#7BD389;flex:0 0 auto;}
 .hero-mission-mobile{display:none;}
 .hero-big{
   font-family:"Shippori Mincho B1",serif;font-weight:800;color:#fff;
@@ -147,6 +154,15 @@ img{max-width:100%;display:block;}
 /* signature band under hero */
 .avg-band{background:var(--pine-deep);padding:46px 0;}
 .avg-band .gauge{margin:0 auto;max-width:720px;}
+
+/* awareness block */
+.awareness{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;padding:82px 0;}
+.aw-kicker{letter-spacing:.32em;font-size:12px;color:var(--amber);font-weight:700;margin-bottom:18px;}
+.aw-q{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(28px,5vw,48px);line-height:1.42;color:var(--ink);}
+.aw-stat{max-width:640px;margin:24px auto 0;font-size:15.5px;line-height:2.05;color:var(--muted);}
+.aw-stat b{color:var(--pine);}
+.aw-hope{max-width:640px;margin:14px auto 30px;font-size:15px;line-height:2;color:var(--ink);}
+.aw-note{margin-top:22px;font-size:11.5px;color:#9aa39c;}
 
 /* hero momentum + heat */
 .hero-momentum{
@@ -419,11 +435,12 @@ section{padding:84px 0;}
     </a>
     <nav class="nav">
       <a href="#why">なぜ骨密度</a>
+      <a href="#about">骨密度とは</a>
       <a href="#do">取り組み</a>
       <a href="#people">参加者</a>
       <a href="#challenge">90日チャレンジ</a>
       <a href="#faq">よくある質問</a>
-      <a class="btn-sm" href="#join">チャレンジに参加</a>
+      <a class="btn-sm" href="challenge.html">チャレンジに参加</a>
     </nav>
     <button class="menu-toggle" aria-label="メニュー">≡</button>
   </div>
@@ -446,14 +463,30 @@ section{padding:84px 0;}
     <p class="brand-tag">国民運動、はじまる。</p>
     <p class="brand-note">はじまりは、今の自分の骨密度を知ることから。</p>
     <p class="hero-mission-mobile">100歳まで、自分の足で歩く日本へ。<span>その一歩を、いま踏み出す。</span></p>
+    <p class="hero-pill">90日チャレンジ ── 参加者募集中</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#join">90日チャレンジに参加する →</a>
+      <a class="btn btn-primary" href="challenge.html">90日チャレンジに参加する →</a>
       <a class="btn btn-green" href="#do">プロジェクトを知る</a>
     </div>
     <p class="hero-momentum"><span class="pulse"></span>いま <b>128</b> 名が挑戦中。仲間は、全国へ広がっています。</p>
   </div>
 
   <span class="scroll-run">SCROLL</span>
+</section>
+
+<!-- AWARENESS (危機感→希望→行動) -->
+<section class="awareness">
+  <div class="narrow">
+    <p class="aw-kicker">CHECK</p>
+    <h2 class="aw-q">あなたの骨密度は、<br>大丈夫ですか？</h2>
+    <p class="aw-stat">
+      骨量は年齢とともに少しずつ減っていきます。とくに40代以降は、意識しておきたい年代。
+      <b>けれど、気づいて動き出せば、いくつからでも骨と向き合えます。</b>
+    </p>
+    <p class="aw-hope">100歳まで、自分の足で歩くために。まずは、今の自分の骨密度を知ることから。</p>
+    <a class="btn btn-primary" href="challenge.html">90日チャレンジの進め方を見る →</a>
+    <p class="aw-note">※ 骨量の減少に関する記述は一般的な目安です。正式公開前に出典を確定します。</p>
+  </div>
 </section>
 
 <!-- SIGNATURE band: 同年代平均ライン -->
@@ -490,7 +523,7 @@ section{padding:84px 0;}
       ひとりの一歩が、やがて全国の当たり前になる。
       100歳まで自分の足で歩ける日本を、ここから一緒に。
     </p>
-    <a class="btn btn-onwarm" href="#join">この運動に加わる →</a>
+    <a class="btn btn-onwarm" href="challenge.html">この運動に加わる →</a>
   </div>
 </section>
 
@@ -522,6 +555,81 @@ section{padding:84px 0;}
       </div>
     </div>
     <p class="src">※ 数値は骨粗しょう症に関する公的資料等に基づく一般的な目安です。正式な公開前に最新の出典・数値を確定して差し替えます。</p>
+  </div>
+</section>
+
+<!-- ABOUT: 骨密度とは -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">骨密度を知る</div>
+      <h2>そもそも「骨密度」とは？</h2>
+      <p class="desc">
+        骨密度（BMD）は、骨に含まれるカルシウムなどのミネラルの量 ── いわば骨の「詰まり具合」です。
+        高いほど骨は丈夫で、低いほど折れやすくなります。測ると、いくつかの数値で結果が示されます。
+        代表的なのが、次の3つです。
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>YAM（若年成人平均値）</h3>
+        <p>20〜44歳の平均骨密度を100%として、自分が何%かを示します。目安は、80%以上＝正常、70〜80%＝骨量が減りぎみ、70%未満＝骨粗しょう症とされます。</p>
+      </div>
+      <div class="step">
+        <h3>T（ティー）スコア</h3>
+        <p>若年成人の平均を基準に、どれだけ離れているかを表す値。−1.0以上＝正常、−1.0〜−2.5＝低骨量、−2.5以下＝骨粗しょう症（WHOの基準）。</p>
+      </div>
+      <div class="step">
+        <h3>Z（ゼット）スコア</h3>
+        <p>同じ年代・同じ性別の平均と比べた値。このプロジェクトが大切にする「同年代平均」に、いちばん近い指標です。</p>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:34px;">
+      だから私たちは、<b style="color:var(--pine)">「同年代の平均以上」</b>を、誰にとっても分かりやすい目標に置いています。
+      数字を競うのではなく、まず自分の現在地を知る。そこがスタートです。
+    </p>
+    <div class="disclaimer">
+      ※ 数値の基準は一般的な目安です。実際の判定・診断は医療機関で行われます。正式公開前に、専門家監修と出典を確定します。
+    </div>
+  </div>
+</section>
+
+<!-- MEASURE: 測り方 -->
+<section class="why" id="measure">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">骨密度の測り方</div>
+      <h2>どこで、どうやって測るの？</h2>
+      <p class="desc">
+        特別な準備はいりません。お近くの施設で、数分あれば測れます。主な方法は次のとおりです。
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>DEXA（デキサ）法</h3>
+        <p>ごく微量のX線で、腰や脚のつけ根を測る精度の高い方法。整形外科や健診センターなどで受けられます。数分で終わります。</p>
+      </div>
+      <div class="step">
+        <h3>超音波法</h3>
+        <p>かかとに超音波をあてる手軽な方法。被ばくがなく、薬局・ドラッグストアや健康イベントでよく使われます。</p>
+      </div>
+      <div class="step">
+        <h3>その他（MD法など）</h3>
+        <p>手のX線から推定する方法などもあります。まずは「受けやすいところで測ってみる」ことが第一歩です。</p>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:30px;">
+      <b style="color:var(--ink)">測れる場所：</b>
+      整形外科・内科／健診センター・人間ドック（オプション）／一部の薬局・ドラッグストア／自治体の健康イベント など。
+    </p>
+    <div class="disclaimer">
+      測り方や施設は、どこでも構いません。このプロジェクトは「同年代平均を意識する」ことが目的なので、厳密な数値比較は必須ではありません。
+      ただ、開始時と90日後を<b>できれば同じ施設・同じ方法</b>で測ると、ご自身での見比べがしやすくなります。
+      費用の目安は、超音波なら無料〜千円程度のイベントもあり、DEXAは自費で数千円程度が一般的です（施設により異なります）。
+    </div>
+    <div style="margin-top:28px;">
+      <a class="btn btn-primary" href="https://www.google.com/maps/search/骨密度+測定" target="_blank" rel="noopener">お近くの骨密度測定施設をさがす（Googleマップ）→</a>
+    </div>
   </div>
 </section>
 
@@ -619,27 +727,15 @@ section{padding:84px 0;}
       <div class="tl-step"><div class="day">Day 90</div><div class="h">もう一度、測る</div><div class="t">現在地を再確認。同年代平均との距離を見つめます。</div></div>
     </div>
 
-    <div class="courses">
+    <div class="courses" style="grid-template-columns:1fr;max-width:600px;margin:0 auto;">
       <div class="course primary">
-        <div class="tag">本格版</div>
+        <div class="tag">90日チャレンジ</div>
         <h3>チャレンジコース</h3>
-        <p class="p">開始前と90日後に骨密度を測定。自分の現在地の変化を、きちんと確認したい方へ。</p>
+        <p class="p">開始前と90日後に骨密度を測定し、自分の現在地の変化を確かめる、90日間のプログラムです。</p>
         <ul>
-          <li>カルベール 90日分</li>
-          <li>飲み方ガイド・記録シート</li>
-          <li>LINEサポート（90日）</li>
+          <li>90日チャレンジキット（カルベール・記録シート・各ガイド）</li>
+          <li>LINEでの励まし・リマインド（90日）</li>
           <li>骨密度測定のご案内</li>
-        </ul>
-      </div>
-      <div class="course">
-        <div class="tag">気軽版</div>
-        <h3>スタートコース</h3>
-        <p class="p">まずカルベールから始め、測れるタイミングで測定を。入口を広く、気軽に参加したい方へ。</p>
-        <ul>
-          <li>カルベール（お試し〜継続）</li>
-          <li>飲み方ガイド・記録シート</li>
-          <li>LINEサポート</li>
-          <li>測定施設のご案内</li>
         </ul>
       </div>
     </div>
@@ -649,34 +745,8 @@ section{padding:84px 0;}
       「自分の骨密度を知り、同年代平均を意識するきっかけ」としてご活用ください。
       カルベールは食品であり、疾病の治療・予防や、骨密度の改善を保証するものではありません。
     </div>
-  </div>
-</section>
-
-<!-- PASSPORT -->
-<section class="passport" id="passport">
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <div class="kicker">骨密度パスポート</div>
-        <h2 style="font-size:clamp(24px,3.4vw,32px);color:var(--ink);line-height:1.5;">
-          自分の数字を、一生ぶん記録する。
-        </h2>
-        <p style="margin-top:20px;color:var(--muted);font-size:15px;">
-          血圧手帳のように、骨密度を記録していく仕組みです。
-          測定日・数値・同年代平均との差を残していくと、
-          自分の目標は「数字を上げる」ことではなく「同年代平均をめざす」ことになります。
-          分かりやすく、多くの人が共感できる目標です。
-        </p>
-        <p style="margin-top:18px;font-size:13px;color:#9aa39c;">※ 会員機能として順次実装予定。まずは記録シートからスタートします。</p>
-      </div>
-      <div class="pp-card">
-        <div class="t">BONE DENSITY PASSPORT</div>
-        <h3>あなたの記録</h3>
-        <div class="pp-row"><span>2026.07.01</span><span>測定 1回目</span></div>
-        <div class="pp-row"><span>2026.10.01</span><span>測定 2回目</span></div>
-        <div class="pp-row"><span>同年代平均との差</span><span style="color:#D9A55B;">確認しよう</span></div>
-        <p class="pp-avg">▲ 目標は「同年代平均以上」。あなたの現在地を、いつでも見返せます。</p>
-      </div>
+    <div style="text-align:center;margin-top:34px;">
+      <a class="btn btn-primary" href="challenge.html">90日チャレンジの進め方を見る →</a>
     </div>
   </div>
 </section>
@@ -688,10 +758,11 @@ section{padding:84px 0;}
       <div class="ph">カルベール<br>商品写真<br><small>（撮影後に差し替え）</small></div>
       <div>
         <div class="kicker">Presented by カルベール</div>
-        <h2>この取り組みを支える、一杯。</h2>
+        <h2>なぜ、カルベールなのか。</h2>
         <p class="p">
-          日本骨密度プロジェクトの中核商品が、カルシウム含有ミネラルウォーター「カルベール」です。
-          1日1回100mlを目安に、無理なく続けられることを大切に設計されています。
+          骨を支える栄養のひとつがカルシウム。けれど日本人はカルシウムが不足しがちで、毎日つづけて摂ることが難しいと言われます。
+          カルベールは、水にカルシウムを含ませ、<b style="color:var(--pine)">1日1回100mlという"続けやすさ"</b>を第一に設計されたミネラルウォーターです。
+          だから90日チャレンジの相棒として選んでいます。
         </p>
         <div class="spec">
           <div><span>カルシウム（100ccあたり）</span><span>52mg</span></div>
@@ -766,16 +837,19 @@ section{padding:84px 0;}
       でも一つだけ ―― 90日後、あなたは今日より自分の骨に関心を持っています。<br>
       その第一歩を、ここから。
     </p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#">カルベール90日チャレンジを始める →</a>
-      <a class="btn btn-ghost" href="#">まずは資料・案内を受け取る</a>
+    <div class="hero-cta" style="justify-content:center;">
+      <a class="btn btn-primary" href="challenge.html">90日チャレンジの進め方を見る →</a>
+      <a class="btn btn-green" href="#" data-line="1">LINEで登録する</a>
     </div>
+    <p style="font-size:13px;color:rgba(247,243,234,.8);margin-top:16px;">
+      いきなり申し込む前に、まず進め方をご確認いただけます。日々の励ましや測定のご案内は、LINEでお届けします。
+    </p>
     <br>
     <a class="find" href="https://www.google.com/maps/search/骨密度+測定" target="_blank" rel="noopener">
       お近くの骨密度測定施設をさがす（Googleマップ）→
     </a>
     <p style="font-size:12px;color:rgba(247,243,234,.55);margin-top:36px;">
-      ※ 申込みボタンのリンク先（フォーム／決済）は、公開前に確定して接続します。
+      ※「LINEで登録」ボタンのリンク先（LINE公式アカウントの友だち追加URL）は、アカウント作成後に接続します。
     </p>
   </div>
 </section>
