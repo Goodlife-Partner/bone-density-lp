@@ -55,10 +55,10 @@ img{max-width:100%;display:block;}
 }
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;}
-.brand .mark{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:18px;color:var(--pine);letter-spacing:.06em;}
+.brand .mark{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:18px;color:var(--pine);letter-spacing:.06em;white-space:nowrap;}
 .brand .sub{font-size:11px;color:var(--muted);letter-spacing:.18em;}
 .nav{display:flex;gap:26px;align-items:center;}
-.nav a{text-decoration:none;font-size:13.5px;color:var(--ink);letter-spacing:.04em;opacity:.85;}
+.nav a{text-decoration:none;font-size:13.5px;color:var(--ink);letter-spacing:.04em;opacity:.85;white-space:nowrap;}
 .nav a:hover{opacity:1;color:var(--pine);}
 .nav .btn-sm{
   background:var(--amber);color:#fff;padding:9px 18px;border-radius:999px;
@@ -393,12 +393,14 @@ section{padding:84px 0;}
 }
 
 /* responsive */
-@media(max-width:880px){
+@media(max-width:1080px){
   .nav{display:none;}
   .menu-toggle{display:block;background:none;border:none;font-size:22px;color:var(--pine);cursor:pointer;}
+}
+@media(max-width:880px){
   .hero-mission-v{display:none;}
   .hero-mission-mobile{
-    display:block;font-family:"Shippori Mincho B1",serif;color:#fff;font-weight:800;
+    display:block;font-family:"Shippori Mincho B1",serif;color:#fff;font-weight:800;word-break:keep-all;
     font-size:clamp(24px,6.4vw,36px);line-height:1.4;margin:18px 0 4px;
     text-shadow:0 2px 20px rgba(0,0,0,.4);
   }
@@ -410,6 +412,8 @@ section{padding:84px 0;}
   .rep .avatar{width:160px;}
 }
 @media(max-width:640px){
+  .brand .sub{display:none;}
+  .brand .mark{font-size:16px;}
   .hero{align-items:flex-end;min-height:78vh;justify-content:flex-start;}
   .hero-bg{object-position:66% center;}
   .hero-shade{background:linear-gradient(180deg, rgba(18,40,30,.1) 0%, rgba(18,40,30,.4) 42%, rgba(18,40,30,.92) 100%);}
@@ -462,13 +466,13 @@ section{padding:84px 0;}
     <h1 class="brand-title">日本骨密度<br>プロジェクト</h1>
     <p class="brand-tag">国民運動、はじまる。</p>
     <p class="brand-note">はじまりは、今の自分の骨密度を知ることから。</p>
-    <p class="hero-mission-mobile">100歳まで、自分の足で歩く日本へ。<span>その一歩を、いま踏み出す。</span></p>
+    <p class="hero-mission-mobile">100歳まで、<wbr>自分の足で歩く<wbr>日本へ。<span>その一歩を、いま踏み出す。</span></p>
     <p class="hero-pill">90日チャレンジ ── 参加者募集中</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="challenge.html">90日チャレンジに参加する →</a>
       <a class="btn btn-green" href="#do">プロジェクトを知る</a>
     </div>
-    <p class="hero-momentum"><span class="pulse"></span>いま <b>128</b> 名が挑戦中。仲間は、全国へ広がっています。</p>
+    <p class="hero-momentum"><span class="pulse"></span><span>全国どこからでも参加できます。90日後、自分の数字で確かめる仲間を募集中です。</span></p>
   </div>
 
   <span class="scroll-run">SCROLL</span>
