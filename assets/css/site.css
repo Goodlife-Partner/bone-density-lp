@@ -276,3 +276,34 @@ table.cmp tbody tr:nth-child(even) { background: var(--ivory); }
 .foot-note { font-size: .82rem; opacity: .8; margin: 0 0 8px; }
 .foot-note a { color: var(--amber-light); }
 .foot-copy { font-size: .74rem; opacity: .6; margin: 0; }
+
+/* ---------------------------------------------------------- 挿絵 */
+.fig {
+  margin: 38px 0;
+  padding: 0;
+}
+.fig img {
+  display: block; width: 100%; height: auto;
+  border-radius: 5px; background: var(--ivory);
+}
+.fig figcaption {
+  font-size: .8rem; color: var(--ink-mute); line-height: 1.8;
+  margin-top: 12px; padding-left: 12px; border-left: 2px solid var(--amber);
+}
+
+/* ヒーロー（H1直下・記事の顔） */
+.fig-hero { margin: 26px 0 40px; }
+.fig-hero img { border-radius: 6px; }
+
+/* 幅を本文より広げる（デスクトップのみ） */
+@media (min-width: 900px) {
+  .fig-wide { margin-left: -60px; margin-right: -60px; }
+}
+
+/* 画像未配置時のプレースホルダ */
+.fig-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--ivory); border: 1px dashed var(--rule); border-radius: 5px;
+  color: var(--ink-mute); font-size: .82rem; text-align: center;
+  padding: 20px; line-height: 1.8;
+}
