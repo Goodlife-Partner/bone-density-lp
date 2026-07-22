@@ -1,0 +1,277 @@
+# 日本骨密度プロジェクト 挿絵スタイルガイド
+
+サイト全体の挿絵に統一感を持たせるための仕様書です。
+新しい挿絵を作るときは、必ずこのファイルの「共通スタイル句」を使ってください。
+
+---
+
+## 1. 共通スタイル句（全カット必須）
+
+各プロンプトの末尾に、**そのまま貼り付けてください。**
+ここを変えない限り、いつ生成しても同じトーンになります。
+
+```
+Style: soft matte three-dimensional render, smooth sculpted forms,
+gentle diffused light from the upper left, soft shadows, no hard outlines.
+Warm cream and ivory palette only (#FCFAF5, #F7F3EA, warm bone white),
+with amber (#C0813A / #D9A55B) used sparingly as the single accent color
+to highlight one specific element. Everything else stays in cream tones.
+Calm, quiet, premium Japanese health-media aesthetic.
+Absolutely no text, no letters, no numbers, no posters, no signage,
+no framed pictures, no logos, no watermarks anywhere in the image.
+Generous negative space.
+```
+
+> **注意：** これが確定版（2代目）です。
+> 初期に試した `clean flat vector medical illustration` から始まる旧版は**使いません**。
+> 深緑 #2C5545 も挿絵には使いません。深緑はサイトUI側（ヘッダー・見出し・CTA）の色で、
+> 挿絵はクリーム基調＋アンバー1色の差し色、という役割分担です。
+
+### 絶対に守るルール
+
+| ルール | 理由 |
+|---|---|
+| 画像内に文字を入れない | AI生成の日本語は必ず崩れる。ラベルはHTML側で重ねる |
+| パレット6色以外を使わない | 既存LPとの一貫性。ここが崩れると一気に安っぽくなる |
+| 人物の顔は簡略化する | 実在の人物に似るリスクを避ける |
+| 恐怖を煽る表現をしない | 折れた骨の生々しい描写、痛みの表現などは使わない |
+| ビフォーアフター表現をしない | 薬機法。効果を暗示する構図は避ける |
+
+---
+
+## 2. 基準カット（先に作って確定させる3枚）
+
+サイトの挿絵はすべて、この3タイプのどれかに分類されます。
+**この3枚は2026年7月に確定済みです。以降の挿絵は、必ずこの確定画像を
+参照画像として添付して生成してください。**
+
+確定した画像（`assets/img/` に配置済み）：
+
+| 種類 | 確定ファイル |
+|---|---|
+| A. 概念図 | `bone-measure-01-hero.webp`（骨の断面） |
+| B. 人体・骨格図 | `bone-measure-03-sites.webp`（腰椎と大腿骨） |
+| C. 人物のいるシーン | `bone-measure-04-exam.webp`（DXA検査） |
+
+以下は、その3枚を生成したときのプロンプトです（再生成が必要になった場合の記録）。
+
+### 基準A：概念図
+```
+A calm conceptual illustration representing bone density.
+A stylized cross-section of human bone showing the internal lattice
+structure of trabecular bone, rendered as an elegant geometric mesh.
+Soft light from the upper left. Abstract, not anatomically graphic.
+Ivory background with generous empty space on the right side.
+```
+→ 用途：ヒーロー画像、抽象的な仕組みの説明
+
+### 基準B：人体・骨格図
+```
+A simplified human skeleton illustration seen from the front,
+rendered in flat vector style in deep pine green on ivory.
+The lumbar spine and the upper part of the femur near the hip joint
+are highlighted in amber. The rest of the skeleton is drawn in a light,
+low-contrast tone. Clean, textbook-like, not photorealistic.
+```
+→ 用途：部位の説明。**骨格の形は必ず監修者に確認すること**
+
+### 基準C：人物のいるシーン
+```
+A person in comfortable clothing lying face up and relaxed on a flat
+examination table, arms at their sides. A slim horizontal scanning arm
+passes above their body. The room is bright and quiet. Illustration style,
+simplified faces without detailed features. Sense of calm and safety.
+```
+→ 用途：行動・場面の説明
+
+### 使い回しの方法
+
+生成ツール別の指定方法です。
+
+- **Midjourney**：確定した画像のURLを取得し、`--sref <URL>` を付ける
+- **ChatGPT / Gemini（Nano Banana）**：確定した画像を添付して「この画風・配色を厳密に守って、次の内容で描いて」と指示
+- **Adobe Firefly**：「構造参照」または「スタイル参照」に確定画像を指定
+
+---
+
+## 3. ページ別ショットリスト
+
+### /bone/measure/（測定方法）※制作済み
+
+| No | ファイル名 | 種類 | 内容 |
+|---|---|---|---|
+| ① | bone-measure-01-hero | A | 骨の内部構造 |
+| ② | bone-measure-02-methods | A | 4方式の比較 |
+| ③ | bone-measure-03-sites | B | 腰椎と大腿骨のつけ根 |
+| ④ | bone-measure-04-exam | C | DXA検査の様子 |
+| ⑤ | bone-measure-05-remodeling | A | 骨のリモデリング |
+
+---
+
+### /bone/about/（骨密度とは）
+
+**① ヒーロー**（1600×900・基準A参照）
+```
+A serene conceptual illustration of bone strength. A vertical column of
+dense honeycomb trabecular structure, gradually becoming sparser toward
+one side, shown as an abstract geometric gradient. No human figure.
+Wide horizontal composition with large empty space.
+```
+
+**② 生涯の骨量変化**（1600×900・基準A参照）
+```
+An abstract line-and-shape diagram suggesting a rise and gradual decline
+over a lifetime: a smooth curve climbing to a plateau then descending
+gently, drawn over a faint honeycomb texture. Purely geometric,
+editorial infographic feel, no axis labels, no numbers.
+```
+
+**③ 骨の中の構造**（1200×900・基準A参照）
+```
+A close-up cutaway of bone showing the dense outer shell and the sponge-like
+inner lattice, presented as two distinct layers. Cross-section view,
+clean geometric interpretation, textbook clarity.
+```
+
+**④ 骨の作り替え**（1600×800・基準A参照）
+```
+A conceptual horizontal diagram of bone renewal as a gentle circular cycle:
+old material cleared away on one side, new material built up on the other,
+connected by a smooth looping arrow. Abstract, honeycomb texture,
+wide horizontal composition.
+```
+※measureの⑤と同案。共用してよい
+
+---
+
+### /bone/risk/（骨密度が下がると）
+
+**① ヒーロー**（1600×900・基準A参照）
+```
+A quiet conceptual illustration suggesting fragility without alarm:
+a honeycomb lattice structure where the cells gradually widen and thin
+toward the edge of the frame. Calm, contemplative, not distressing.
+Large ivory negative space.
+```
+
+**② 折れやすい4つの部位**（1200×900・基準B参照）
+```
+A simplified human skeleton seen from the front. Four regions are gently
+highlighted in amber: the spine, the hip area, the wrist, and the shoulder.
+The rest of the skeleton is drawn in a light low-contrast tone.
+No injury depicted, no cracks, no red.
+```
+※骨折そのものは描かせない。部位を示すだけに留める
+
+**③ 姿勢の変化**（1200×900・基準B参照）
+```
+Two simplified side-view human silhouettes standing side by side,
+one upright and one with a gently rounded upper back and slightly
+lower height. Neutral, respectful depiction, no facial expression,
+no sense of suffering. Flat vector style.
+```
+※これは薬機法・表現面で最も慎重に。「悲惨さ」を出さないこと
+
+**④ 生活への広がり**（1600×900・基準C参照）
+```
+A person seated calmly in a bright room with a walking stick resting
+nearby and a window with soft daylight. Quiet, dignified atmosphere,
+simplified face without detailed features. Not sad, not pitying.
+```
+
+---
+
+### /bone/improve/（骨密度を上げるには）
+
+**① ヒーロー**（1600×900・基準A参照）
+```
+A conceptual illustration of building and strengthening: a honeycomb
+lattice becoming denser and more ordered from left to right, suggesting
+gradual reinforcement. Abstract, optimistic, wide horizontal composition.
+```
+
+**② 栄養**（1600×1000・基準A参照）
+```
+A flat lay arrangement of simplified food shapes: small fish, leafy greens,
+soybeans and fermented soybeans, a glass of milk, and a bowl.
+Evenly spaced on an ivory surface, top-down view, geometric simplification.
+No packaging, no branded products, no text.
+```
+※特定の商品パッケージが写り込まないよう指定必須
+
+**③ 荷重のかかる運動**（1600×900・基準C参照）
+```
+Three simplified human figures in a row performing simple standing
+movements: walking, a shallow squat, and standing on one leg.
+Side view, flat vector style, simplified faces, calm and approachable.
+Suitable for older adults, no athletic or strenuous impression.
+```
+
+**④ 日光**（1600×800・基準C参照）
+```
+A person walking outdoors in gentle morning sunlight, seen from a distance
+in silhouette-like simplification. Soft light rays from the upper left,
+a few abstract trees. Peaceful, wide horizontal composition.
+```
+
+**⑤ 見直したい習慣**（1600×900・基準A参照）
+```
+An abstract arrangement of simple icon-like shapes suggesting lifestyle
+factors, arranged in a loose grid on ivory: a crossed-out cigarette shape,
+a glass, a scale. Purely geometric, minimal, no text, no human figure.
+```
+
+---
+
+### /bone/（ピラーページ）
+
+**① ヒーロー**（1600×900・基準A参照）
+```
+A wide conceptual header image: a horizontal band of honeycomb trabecular
+structure with varying density across the frame, fading into ivory at both
+edges. Serene, architectural, suitable as a section cover.
+Large empty space in the center for overlaid text.
+```
+※中央にテキストを重ねるため、中央を空けさせる
+
+---
+
+### Tips記事
+
+記事ごとにアイキャッチ1枚。基準Aを参照し、記事の主題を抽象化した図にします。
+本文中の挿絵は原則なし（記事が短いため）。
+
+---
+
+## 4. 書き出し・配置
+
+| 項目 | 指定 |
+|---|---|
+| 形式 | WebP（品質80%） |
+| 幅 | 1600px（部位図など縦長のものは1200px） |
+| 命名 | `bone-<ページ>-<番号>-<内容>.webp` 例：`bone-risk-02-sites.webp` |
+| 置き場所 | リポジトリの `assets/img/` |
+| OGP | 各ページのヒーローを1200×630にトリミングして流用 |
+
+HTML側には `width` と `height` を必ず入れます（読み込み時のガタつき防止）。
+
+```html
+<img src="/assets/img/bone-risk-02-sites.webp"
+     width="1200" height="900"
+     alt="骨折が起こりやすい4つの部位を示した骨格図"
+     loading="lazy" decoding="async">
+```
+
+`alt` は画像の内容を具体的に書きます。画像検索からの流入と、読み上げ環境での可読性の両方に効きます。
+
+---
+
+## 5. 生成後のチェック
+
+- [ ] パレット6色以外の色が混ざっていないか
+- [ ] 画像内に文字・数字が写り込んでいないか
+- [ ] 骨格・人体の形に不自然さがないか（**監修者に確認**）
+- [ ] 手指の本数、関節の向きが破綻していないか
+- [ ] 特定の商品・ブランドが写り込んでいないか
+- [ ] 実在の人物に似ていないか
+- [ ] 恐怖・悲惨さを感じさせる表現になっていないか

@@ -312,3 +312,11 @@ table.cmp tbody tr:nth-child(even) { background: var(--ivory); }
 .fig-portrait { display: flex; flex-direction: column; align-items: center; }
 .fig-portrait img { max-width: 420px; }
 .fig-portrait figcaption { max-width: 100%; align-self: stretch; }
+
+/* ---------------------------------------------------------- 図表（SVG） */
+.chart { display: block; width: 100%; height: auto; border-radius: 4px; }
+.fig-chart { margin: 34px 0; }
+.fig-chart figcaption {
+  font-size: .8rem; color: var(--ink-mute); line-height: 1.8;
+  margin-top: 12px; padding-left: 12px; border-left: 2px solid var(--amber);
+}
