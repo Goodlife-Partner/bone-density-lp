@@ -307,3 +307,8 @@ table.cmp tbody tr:nth-child(even) { background: var(--ivory); }
   color: var(--ink-mute); font-size: .82rem; text-align: center;
   padding: 20px; line-height: 1.8;
 }
+
+/* 縦長の図版は幅を抑えて中央寄せ（スクロール過多の防止） */
+.fig-portrait { display: flex; flex-direction: column; align-items: center; }
+.fig-portrait img { max-width: 420px; }
+.fig-portrait figcaption { max-width: 100%; align-self: stretch; }
