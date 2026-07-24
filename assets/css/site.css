@@ -26,6 +26,12 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* 安全弁：どんな場合でも画像が枠を超えない */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -338,17 +344,18 @@ table.cmp tbody tr:nth-child(even) { background: var(--ivory); }
 .topics { margin: 56px 0 0; display: grid; gap: 26px; }
 
 .topic {
-  display: grid; grid-template-columns: 240px 1fr; gap: 26px;
-  align-items: start;
+  display: grid; grid-template-columns: 268px 1fr; gap: 0;
   border: 1px solid var(--rule); border-radius: 6px;
-  background: #fff; padding: 22px; text-decoration: none; color: inherit;
+  background: #fff; padding: 0; overflow: hidden;
+  text-decoration: none; color: inherit;
   transition: border-color .18s ease;
 }
 .topic:hover { border-color: var(--amber); color: inherit; }
 .topic-thumb {
-  width: 100%; height: 150px; object-fit: cover;
-  border-radius: 4px; background: var(--ivory); display: block;
+  width: 100%; height: 100%; min-height: 200px;
+  object-fit: cover; background: var(--ivory); display: block;
 }
+.topic > div { padding: 26px 28px; }
 .topic-num {
   font-size: .72rem; letter-spacing: .16em; color: var(--amber);
   font-weight: 700; margin: 0 0 6px;
@@ -364,8 +371,9 @@ table.cmp tbody tr:nth-child(even) { background: var(--ivory); }
 .topic-more::after { content: " →"; }
 
 @media (max-width: 680px) {
-  .topic { grid-template-columns: 1fr; gap: 16px; padding: 18px; }
-  .topic-thumb { height: 180px; }
+  .topic { grid-template-columns: 1fr; }
+  .topic-thumb { height: 190px; min-height: 0; }
+  .topic > div { padding: 20px 22px 22px; }
 }
 
 /* 読む順ガイド */
