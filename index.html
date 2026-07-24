@@ -8,6 +8,10 @@
 <title>日本骨密度プロジェクト｜まず、測ろう。</title>
 <meta name="description" content="100歳まで、自分の足で歩く日本へ。まず自分の骨密度を知り、同年代平均を目指す。日本骨密度プロジェクトの取り組みと90日チャレンジのご案内。">
 
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -45,6 +49,29 @@ a{color:inherit;}
 img{max-width:100%;display:block;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
 .narrow{max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* ---------- 記事への導線 ---------- */
+.learn-more{margin-top:30px;}
+.learn-more a{
+  display:inline-block;font-weight:700;font-size:15px;color:var(--pine);
+  text-decoration:none;border:1px solid var(--line);border-radius:999px;
+  padding:.78em 1.9em;background:#fff;transition:border-color .18s ease,color .18s ease;
+}
+.learn-more a:hover{border-color:var(--amber);color:var(--amber);}
+
+.learn-hub{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.learn-hub .wrap{padding-top:56px;padding-bottom:56px;}
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:28px;}
+.learn-card{
+  display:block;text-decoration:none;background:#fff;
+  border:1px solid var(--line);border-radius:8px;padding:20px 22px;
+  transition:border-color .18s ease;
+}
+.learn-card:hover{border-color:var(--amber);}
+.learn-card .n{font-size:11px;letter-spacing:.16em;color:var(--amber);font-weight:700;}
+.learn-card h3{font-size:17px;color:var(--pine-deep);margin:6px 0 8px;}
+.learn-card p{font-size:13px;color:var(--muted);line-height:1.8;}
+.learn-hub .allmore{margin-top:26px;}
 
 /* ---------- header ---------- */
 .site-header{
@@ -443,6 +470,7 @@ section{padding:84px 0;}
       <a href="#people">参加者</a>
       <a href="#challenge">90日チャレンジ</a>
       <a href="#faq">よくある質問</a>
+      <a href="/bone/">骨密度を学ぶ</a>
       <a class="btn-sm" href="challenge.html">チャレンジに参加</a>
     </nav>
     <button class="menu-toggle" aria-label="メニュー">≡</button>
@@ -594,6 +622,9 @@ section{padding:84px 0;}
     <div class="disclaimer">
       ※ 数値の基準は一般的な目安です。実際の判定・診断は医療機関で行われます。正式公開前に、専門家監修と出典を確定します。
     </div>
+    <div class="learn-more">
+      <a href="/bone/about/">YAM値の読み方と骨量の変化をもっと詳しく →</a>
+    </div>
   </div>
 </section>
 
@@ -632,6 +663,48 @@ section{padding:84px 0;}
     </div>
     <div style="margin-top:28px;">
       <a class="btn btn-primary" href="https://www.google.com/maps/search/骨密度" target="_blank" rel="noopener">お近くの骨密度測定施設をさがす（Googleマップ）→</a>
+    </div>
+    <div class="learn-more">
+      <a href="/bone/measure/">測定方法の違いと精度、費用の目安を詳しく →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN HUB: 特集記事への導線 -->
+<section class="learn-hub" id="learn">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">骨密度を学ぶ</div>
+      <h2>もっと詳しく知りたい方へ</h2>
+      <p class="desc">
+        骨密度について知っておきたいことを、4つのテーマにまとめました。
+        測る前に読んでも、結果を見てから読んでも構いません。
+      </p>
+    </div>
+    <div class="learn-grid">
+      <a class="learn-card" href="/bone/about/">
+        <div class="n">01</div>
+        <h3>骨密度とは</h3>
+        <p>何を測った数値なのか。YAM値・Tスコアの読み方と、一生のうちで骨量がどう変わるか。</p>
+      </a>
+      <a class="learn-card" href="/bone/risk/">
+        <div class="n">02</div>
+        <h3>骨密度が下がると</h3>
+        <p>自覚症状がないまま進む理由と、折れやすい4つの部位。生活への影響まで。</p>
+      </a>
+      <a class="learn-card" href="/bone/measure/">
+        <div class="n">03</div>
+        <h3>測定方法</h3>
+        <p>4つの測定方法の違いと精度。受けられる場所、費用の目安、検査前の注意点。</p>
+      </a>
+      <a class="learn-card" href="/bone/improve/">
+        <div class="n">04</div>
+        <h3>骨密度を上げるには</h3>
+        <p>食事・運動・日光の基本。カルシウムを含む食品の一覧と、続けやすい形の探し方。</p>
+      </a>
+    </div>
+    <div class="learn-more allmore">
+      <a href="/bone/">骨密度を学ぶ・総合ガイドを見る →</a>
     </div>
   </div>
 </section>
@@ -867,6 +940,8 @@ section{padding:84px 0;}
         <a href="#do">取り組み</a>
         <a href="#challenge">90日チャレンジ</a>
         <a href="#faq">よくある質問</a>
+        <a href="/bone/">骨密度を学ぶ</a>
+        <a href="/bone/measure/">測定方法</a>
         <a href="https://healthing.jp" target="_blank" rel="noopener">カルベール公式</a>
       </nav>
     </div>
