@@ -439,7 +439,21 @@ a.person-link:hover .read-more{text-decoration:underline;}
 .supervise .sv-name{font-family:"Shippori Mincho B1",serif;font-size:18px;font-weight:700;color:var(--pine-deep);}
 .supervise .sv-name span{font-size:13px;font-weight:500;color:var(--muted);margin-left:6px;}
 .supervise .sv-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:4px;}
+
 @media(max-width:560px){.supervise{align-items:flex-start;gap:12px;padding:16px 18px;}}
+/* モバイル追従CTA */
+.mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(33,63,51,.96);box-shadow:0 -4px 18px rgba(0,0,0,.18);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transform:translateY(130%);transition:transform .3s ease;}
+.mobile-cta.show{transform:translateY(0);}
+.mobile-cta.at-footer{transform:translateY(130%);}
+.mobile-cta a{display:block;text-align:center;text-decoration:none;
+  background:var(--amber);color:#fff;font-family:"Shippori Mincho B1",serif;font-weight:700;
+  font-size:15px;letter-spacing:.04em;padding:14px;border-radius:10px;
+  box-shadow:0 2px 8px rgba(192,129,58,.45);}
+@media(max-width:880px){.mobile-cta{display:block;}}
 
 /* responsive */
 @media(max-width:1080px){
@@ -976,11 +990,36 @@ a.person-link:hover .read-more{text-decoration:underline;}
   </div>
 </footer>
 
+<div class="mobile-cta" id="mobileCta">
+  <a href="challenge.html">120日プログラムの進め方を見る →</a>
+</div>
+
 <script>
   // モバイルメニュー：まずは最寄セクションへスクロール（簡易）。本実装は後日。
   document.querySelector('.menu-toggle')?.addEventListener('click',function(){
     document.querySelector('#do')?.scrollIntoView({behavior:'smooth'});
   });
+
+  // モバイル追従CTA：ヒーローを過ぎたら表示（常時表示にするなら SHOW_AFTER を 0 に）
+  var SHOW_AFTER = 560;
+  var mc = document.getElementById('mobileCta');
+  if (mc) {
+    var toggle = function(){
+      if (window.scrollY > SHOW_AFTER) { mc.classList.add('show'); }
+      else { mc.classList.remove('show'); }
+    };
+    window.addEventListener('scroll', toggle, {passive:true});
+    toggle();
+    var ft = document.querySelector('.footer');
+    if (ft && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) { mc.classList.add('at-footer'); }
+          else { mc.classList.remove('at-footer'); }
+        });
+      }, {threshold:0}).observe(ft);
+    }
+  }
 </script>
 </body>
 </html>
