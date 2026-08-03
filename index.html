@@ -432,6 +432,14 @@ a.person-link:hover .read-more{text-decoration:underline;}
   background:var(--ivory);border:1px solid var(--line);border-left:3px solid var(--amber);
   border-radius:8px;padding:18px 22px;font-size:12.5px;color:var(--muted);line-height:1.9;margin-top:34px;
 }
+.supervise{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:16px 22px;margin-top:20px;box-shadow:0 2px 12px rgba(33,63,51,.06);}
+.supervise .sv-badge{flex:none;font-family:"Shippori Mincho B1",serif;font-size:12px;letter-spacing:.14em;
+  color:#fff;background:var(--amber);border-radius:20px;padding:6px 15px;}
+.supervise .sv-name{font-family:"Shippori Mincho B1",serif;font-size:18px;font-weight:700;color:var(--pine-deep);}
+.supervise .sv-name span{font-size:13px;font-weight:500;color:var(--muted);margin-left:6px;}
+.supervise .sv-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:4px;}
+@media(max-width:560px){.supervise{align-items:flex-start;gap:12px;padding:16px 18px;}}
 
 /* responsive */
 @media(max-width:1080px){
@@ -530,7 +538,7 @@ a.person-link:hover .read-more{text-decoration:underline;}
     </p>
     <p class="aw-hope">100歳まで、自分の足で歩くために。まずは、今の自分の骨密度を知ることから。</p>
     <a class="btn btn-primary" href="challenge.html">骨習慣プログラムの進め方を見る →</a>
-    <p class="aw-note">※ 骨量の減少に関する記述は一般的な目安です。正式公開前に出典を確定します。</p>
+    <p class="aw-note">出典：厚生労働省 e-ヘルスネット「骨粗鬆症の予防のための食生活」</p>
   </div>
 </section>
 
@@ -634,8 +642,15 @@ a.person-link:hover .read-more{text-decoration:underline;}
       数字を競うのではなく、まず自分の現在地を知る。そこがスタートです。
     </p>
     <div class="disclaimer">
-      ※ 数値の基準は一般的な目安です。実際の判定・診断は医療機関で行われます。正式公開前に、専門家監修と出典を確定します。
+      ※ 数値の基準は一般的な目安です。実際の判定・診断は医療機関で行われます。
     </div>
+    <aside class="supervise" aria-label="監修者情報">
+      <span class="sv-badge">監修</span>
+      <div class="sv-body">
+        <p class="sv-name">久保 肇 <span>医師</span></p>
+        <p class="sv-note">本プロジェクトの骨密度に関する医学的記述は、久保 肇 医師の監修を受けています。</p>
+      </div>
+    </aside>
     <div class="learn-more">
       <a href="/bone/about/">YAM値の読み方と骨量の変化をもっと詳しく →</a>
     </div>
