@@ -322,6 +322,41 @@ section{padding:84px 0;}
 .person .body .meta{font-size:12.5px;color:var(--amber-soft);margin-top:4px;letter-spacing:.06em;}
 .person .body .quote{font-size:14px;color:rgba(247,243,234,.8);margin-top:14px;line-height:1.8;}
 .people-note{margin-top:30px;font-size:12.5px;color:rgba(247,243,234,.6);}
+
+/* text voices (within participants section) */
+.voice-block{margin-top:42px;}
+.voice-heading{
+  font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:18px;color:#fff;
+  padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid rgba(247,243,234,.16);
+}
+.voice-list{display:flex;flex-direction:column;gap:16px;}
+.voice-item{
+  background:rgba(247,243,234,.05);border:1px solid rgba(247,243,234,.16);
+  border-radius:14px;padding:26px 28px;
+}
+.voice-item .v-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;}
+.voice-item .v-name{font-family:"Shippori Mincho B1",serif;font-size:18px;color:#fff;}
+.voice-item .v-meta{font-size:12.5px;color:var(--amber-soft);letter-spacing:.06em;}
+.voice-item .v-title{font-size:14.5px;color:var(--amber-soft);margin:10px 0 4px;line-height:1.7;}
+.voice-item .v-body{position:relative;}
+.voice-item .v-body p{font-size:15px;color:rgba(247,243,234,.85);line-height:1.95;margin-top:14px;}
+.voice-item .v-body p:first-child{margin-top:14px;}
+.voice-item.clamp .v-body{max-height:300px;overflow:hidden;}
+.voice-item.clamp .v-body::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:96px;pointer-events:none;
+  background:linear-gradient(rgba(45,84,68,0),rgba(45,84,68,.96));
+}
+.voice-item.open .v-body{max-height:none;}
+.voice-item .v-toggle{
+  margin-top:14px;background:none;border:none;cursor:pointer;padding:6px 0;
+  font-family:inherit;font-size:13.5px;font-weight:700;color:var(--amber-soft);
+  letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px;
+}
+.voice-item .v-toggle::after{
+  content:"";width:8px;height:8px;border-right:2px solid var(--amber-soft);
+  border-bottom:2px solid var(--amber-soft);transform:rotate(45deg);transition:transform .2s;
+}
+.voice-item.open .v-toggle::after{transform:rotate(-135deg);}
 .person .ph img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;}
 a.person-link{display:block;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,background .2s;}
 a.person-link:hover{transform:translateY(-3px);border-color:rgba(217,165,91,.5);background:rgba(247,243,234,.08);}
@@ -799,8 +834,30 @@ a.person-link:hover .read-more{text-decoration:underline;}
         </div>
       </a>
     </div>
+
+    <div class="voice-block">
+      <h3 class="voice-heading">文章で寄せられた声</h3>
+      <div class="voice-list">
+
+        <article class="voice-item">
+          <div class="v-head">
+            <span class="v-name">市川 和演さん</span>
+            <span class="v-meta">92歳</span>
+          </div>
+          <p class="v-title">「100歳でも元気に動ける身体を目指して」</p>
+          <div class="v-body">
+            <p>私は今年で92歳になります。長年、気功を続けていて、毎朝の散歩や体操も欠かしません。</p>
+            <p>昨年の暮れからは、その毎日の習慣に、カルベール（ミネラルウォーター）でのカルシウム補給を加えました。運動や気功を土台にしながら、コツコツとカルシウムを摂ることを続けています。</p>
+            <p>ありがたいことに、いまでは気功の仲間にもこの習慣を紹介していて、気功の先生や、有名企業を創業された方も一緒に続けてくださっています。みなさん80代半ばですが、前向きで、とてもお元気です。</p>
+            <p>私の目標は、100歳になっても元気に動ける「バリバリの100歳」。同じ世代の方にも、一緒に元気でいましょう、とお伝えしたいですね。</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
     <p class="people-note">
-      ※ 掲載内容はご本人の同意のもとに公開しています。体験談は個人の感想であり、効果を保証するものではありません。
+      ※ 掲載内容はご本人の同意のもとに公開しています。カルベールは食品（ミネラルウォーター）です。体験談は個人の感想であり、効果を示すものではありません。
     </p>
   </div>
 </section>
@@ -1019,6 +1076,28 @@ a.person-link:hover .read-more{text-decoration:underline;}
       }, {threshold:0}).observe(ft);
     }
   }
+
+  // お声：基本は全文表示。長いものだけ「続きを読む」で折りたたむ
+  (function(){
+    var CLAMP_PX = 300;
+    document.querySelectorAll('.voice-item').forEach(function(item){
+      var body = item.querySelector('.v-body');
+      if (!body) return;
+      if (body.scrollHeight > CLAMP_PX + 48) {
+        item.classList.add('clamp');
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'v-toggle';
+        btn.textContent = '続きを読む';
+        btn.addEventListener('click', function(){
+          var open = item.classList.toggle('open');
+          item.classList.toggle('clamp', !open);
+          btn.textContent = open ? '閉じる' : '続きを読む';
+        });
+        item.appendChild(btn);
+      }
+    });
+  })();
 </script>
 </body>
 </html>
