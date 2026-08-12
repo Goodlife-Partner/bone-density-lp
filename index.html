@@ -525,6 +525,64 @@ a.person-link:hover .read-more{text-decoration:underline;}
   .stat-row,.steps,.people-grid{grid-template-columns:1fr;}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;}.scroll-cue span{animation:none;}}
+
+/* ===== v2: 感情設計リニューアル追加分 ===== */
+/* こんな方へ */
+.fit{background:var(--ivory);padding:72px 0;}
+.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.fit-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;box-shadow:0 2px 12px rgba(33,63,51,.05);}
+.fit-card .ck{flex:none;width:36px;height:36px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;}
+.fit-card .ck svg{width:18px;height:18px;display:block;}
+.fit-card p{font-size:15.5px;color:var(--ink);line-height:1.7;font-weight:700;}
+.fit-card small{display:block;font-weight:500;color:var(--muted);font-size:13px;line-height:1.75;margin-top:8px;}
+
+/* 骨量カーブ（イメージ図） */
+.aw-curve{max-width:620px;margin:34px auto 6px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 20px 14px;}
+.aw-curve svg{width:100%;height:auto;display:block;}
+.aw-curve figcaption{font-size:12px;color:#727c74;margin-top:10px;line-height:1.7;text-align:center;}
+
+/* 統計カードのアイコン */
+.stat .ic{width:44px;height:44px;margin-bottom:14px;}
+.stat .ic svg{width:100%;height:100%;display:block;}
+
+/* 毎日の4習慣 */
+.habits-wrap{margin-top:44px;padding-top:38px;border-top:1px dashed var(--line);}
+.habits-title{font-family:"Shippori Mincho B1",serif;font-size:clamp(19px,2.6vw,24px);color:var(--pine-deep);text-align:center;margin-bottom:26px;}
+.habits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.habit{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 16px 22px;text-align:center;transition:transform .2s;}
+.habit:hover{transform:translateY(-3px);}
+.habit .hi{width:54px;height:54px;margin:0 auto 12px;}
+.habit .hi svg{width:100%;height:100%;display:block;}
+.habit .k{font-family:"Shippori Mincho B1",serif;font-size:24px;font-weight:800;color:var(--pine);line-height:1.2;}
+.habit .k span{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:11px;font-weight:700;color:var(--amber);letter-spacing:.2em;margin-top:4px;}
+.habit p{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.75;}
+.habit-note{max-width:640px;margin:26px auto 0;text-align:center;font-size:14.5px;color:var(--muted);line-height:1.9;}
+.habit-note b{color:var(--pine);}
+
+/* 教育セクション（圧縮版）のアコーディオン */
+.edu-more{border:1px solid var(--line);border-radius:12px;background:var(--ivory);overflow:hidden;}
+.edu-more summary{cursor:pointer;list-style:none;padding:19px 46px 19px 22px;position:relative;font-weight:700;font-size:15px;color:var(--pine);}
+.edu-more summary::-webkit-details-marker{display:none;}
+.edu-more summary::after{content:"＋";position:absolute;right:20px;top:17px;color:var(--amber);font-weight:700;font-size:17px;transition:.2s;}
+.edu-more[open] summary::after{content:"−";}
+.edu-more .edu-body{padding:8px 22px 26px;}
+.edu-more .steps{grid-template-columns:repeat(3,1fr);}
+section.edu{padding:70px 0;}
+
+/* 定員ノート */
+.cap-note{margin-top:14px;font-size:13px;color:var(--muted);letter-spacing:.03em;}
+
+@media(max-width:880px){
+  .fit-grid{grid-template-columns:1fr;}
+  .habits{grid-template-columns:repeat(2,1fr);}
+  .edu-more .steps{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .fit{padding:56px 0;}
+  .habits{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .habit{padding:20px 12px 18px;}
+  .habit p br{display:none;}
+}
 </style>
 </head>
 <body>
@@ -536,10 +594,10 @@ a.person-link:hover .read-more{text-decoration:underline;}
     </a>
     <nav class="nav">
       <a href="#why">なぜ骨密度</a>
-      <a href="#about">骨密度とは</a>
+      <a href="#people">参加者の声</a>
       <a href="#do">取り組み</a>
-      <a href="#people">参加者</a>
       <a href="#challenge">骨習慣プログラム</a>
+      <a href="#about">骨密度とは</a>
       <a href="#faq">よくある質問</a>
       <a href="/bone/">骨密度を学ぶ</a>
       <a class="btn-sm" href="challenge.html">チャレンジに参加</a>
@@ -575,6 +633,30 @@ a.person-link:hover .read-more{text-decoration:underline;}
   <span class="scroll-run">SCROLL</span>
 </section>
 
+<!-- FIT: こんな方へ（共感） -->
+<section class="fit" id="fit">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:34px;">
+      <div class="kicker">こんな方へ</div>
+      <h2>ひとつでも当てはまったら、<br>この物語はあなたのものです。</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#C0813A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><p>骨密度が、気になりはじめた</p><small>健診で指摘された。身近な人の骨折を見た。きっかけは、人それぞれです。</small></div>
+      </div>
+      <div class="fit-card">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#C0813A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><p>何から始めればいいか、迷っている</p><small>特別な知識はいりません。「まず、測ってみる」から始まります。</small></div>
+      </div>
+      <div class="fit-card">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#C0813A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><p>ひとりでは、なかなか続かない</p><small>毎日のLINEと記録シートが、120日間そっと伴走します。</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AWARENESS (危機感→希望→行動) -->
 <section class="awareness">
   <div class="narrow">
@@ -584,9 +666,59 @@ a.person-link:hover .read-more{text-decoration:underline;}
       骨量は年齢とともに少しずつ減っていきます。とくに40代以降は、意識しておきたい年代。
       <b>けれど、気づいて動き出せば、いくつからでも骨と向き合えます。</b>
     </p>
+    <figure class="aw-curve" aria-label="加齢による骨量変化のイメージ">
+      <svg viewBox="0 0 560 196" role="img">
+        <line x1="34" y1="160" x2="530" y2="160" stroke="#D9D2C2" stroke-width="1"/>
+        <rect x="120" y="30" width="120" height="130" fill="rgba(217,165,91,.10)"/>
+        <text x="180" y="24" fill="#C0813A" font-size="11.5" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">骨量のピーク（20〜44歳）</text>
+        <path d="M40 152 C 90 58, 118 42, 178 40 C 226 39, 252 48, 314 80 C 382 114, 462 136, 524 146" fill="none" stroke="#2C5545" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="314" cy="80" r="7" fill="#C0813A"/>
+        <line x1="314" y1="88" x2="314" y2="160" stroke="#C0813A" stroke-width="1.4" stroke-dasharray="4 4"/>
+        <text x="314" y="66" fill="#8A5320" font-size="12.5" font-weight="700" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">いま、ここで気づけるか。</text>
+        <text x="96" y="178" fill="#727c74" font-size="11" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">20歳</text>
+        <text x="238" y="178" fill="#727c74" font-size="11" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">40歳</text>
+        <text x="380" y="178" fill="#727c74" font-size="11" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">60歳</text>
+        <text x="500" y="178" fill="#727c74" font-size="11" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">80歳</text>
+      </svg>
+      <figcaption>骨量は40代ごろからゆるやかに減っていきます。※加齢による一般的な変化のイメージ図</figcaption>
+    </figure>
     <p class="aw-hope">100歳まで、自分の足で歩くために。まずは、今の自分の骨密度を知ることから。</p>
     <a class="btn btn-primary" href="challenge.html">骨習慣プログラムの進め方を見る →</a>
     <p class="aw-note">出典：厚生労働省 e-ヘルスネット「骨粗鬆症の予防のための食生活」</p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">なぜ、骨密度なのか</div>
+      <h2>転ばないからだは、暮らしそのものを守る。</h2>
+      <p class="desc">
+        骨密度の低下は痛みもなく進み、多くの場合、骨折して初めて気づきます。
+        自分の足で歩き続けられるかどうかは、健康寿命を大きく左右します。
+        これは一人の問題ではなく、社会全体で向き合うべきテーマです。
+      </p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M30.5 10.5a5 5 0 1 1 7 7L21 34a5 5 0 1 1-7-7z" stroke="#2C5545" stroke-width="2.6" stroke-linejoin="round"/><circle cx="37" cy="11" r="1.6" fill="#C0813A"/><circle cx="11" cy="37" r="1.6" fill="#C0813A"/></svg></div>
+        <div class="num">約1,590<small>万人</small></div>
+        <div class="t">国内の骨粗しょう症の推計患者数とされる規模。多くが未受診・未測定と考えられています。</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="16" r="6" stroke="#2C5545" stroke-width="2.6"/><path d="M7 40c0-7 5-11 11-11s11 4 11 11" stroke="#2C5545" stroke-width="2.6"/><circle cx="35" cy="18" r="5" stroke="#C0813A" stroke-width="2.6"/><path d="M29.5 40c.5-6 3-9 5.5-9 4 0 6.5 3 6.5 9" stroke="#C0813A" stroke-width="2.6"/></svg></div>
+        <div class="num">女性に<small>多い</small></div>
+        <div class="t">閉経後の女性はとくに骨量が減少しやすく、40代以降の意識づけが大切とされます。</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M8 35a16 16 0 1 1 32 0" stroke="#2C5545" stroke-width="2.6"/><path d="M24 35l9-13" stroke="#C0813A" stroke-width="2.6"/><circle cx="24" cy="35" r="2.6" fill="#C0813A"/></svg></div>
+        <div class="num">まず<small>測定</small></div>
+        <div class="t">自分の数値を知らないまま過ごしている人が大半。第一歩は「測ってみる」ことです。</div>
+      </div>
+    </div>
+    <p class="src">※ 数値は骨粗しょう症に関する公的資料等に基づく一般的な目安です。</p>
   </div>
 </section>
 
@@ -609,195 +741,6 @@ a.person-link:hover .read-more{text-decoration:underline;}
         「数字を上げること」ではなく、<b style="color:#D9A55B;">同年代の平均に近づき、平均以上をめざすこと</b>。
         まずは今の自分の骨密度を知ることから始まります。
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">なぜ、骨密度なのか</div>
-      <h2>転ばないからだは、暮らしそのものを守る。</h2>
-      <p class="desc">
-        骨密度の低下は痛みもなく進み、多くの場合、骨折して初めて気づきます。
-        自分の足で歩き続けられるかどうかは、健康寿命を大きく左右します。
-        これは一人の問題ではなく、社会全体で向き合うべきテーマです。
-      </p>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat">
-        <div class="num">約1,590<small>万人</small></div>
-        <div class="t">国内の骨粗しょう症の推計患者数とされる規模。多くが未受診・未測定と考えられています。</div>
-      </div>
-      <div class="stat">
-        <div class="num">女性に<small>多い</small></div>
-        <div class="t">閉経後の女性はとくに骨量が減少しやすく、40代以降の意識づけが大切とされます。</div>
-      </div>
-      <div class="stat">
-        <div class="num">まず<small>測定</small></div>
-        <div class="t">自分の数値を知らないまま過ごしている人が大半。第一歩は「測ってみる」ことです。</div>
-      </div>
-    </div>
-    <p class="src">※ 数値は骨粗しょう症に関する公的資料等に基づく一般的な目安です。</p>
-  </div>
-</section>
-
-<!-- ABOUT: 骨密度とは -->
-<section id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">骨密度を知る</div>
-      <h2>そもそも「骨密度」とは？</h2>
-      <p class="desc">
-        骨密度（BMD）は、骨に含まれるカルシウムなどのミネラルの量 ── いわば骨の「詰まり具合」です。
-        高いほど骨は丈夫で、低いほど折れやすくなります。測ると、いくつかの数値で結果が示されます。
-        代表的なのが、次の3つです。
-      </p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <h3>YAM（若年成人平均値）</h3>
-        <p>20〜44歳の平均骨密度を100%として、自分が何%かを示します。目安は、80%以上＝正常、70〜80%＝骨量が減りぎみ、70%未満＝骨粗しょう症とされます。</p>
-      </div>
-      <div class="step">
-        <h3>T（ティー）スコア</h3>
-        <p>若年成人の平均を基準に、どれだけ離れているかを表す値。−1.0以上＝正常、−1.0〜−2.5＝低骨量、−2.5以下＝骨粗しょう症（WHOの基準）。</p>
-      </div>
-      <div class="step">
-        <h3>Z（ゼット）スコア</h3>
-        <p>同じ年代・同じ性別の平均と比べた値。このプロジェクトが大切にする「同年代平均」に、いちばん近い指標です。</p>
-      </div>
-    </div>
-    <p class="desc" style="margin-top:34px;">
-      だから私たちは、<b style="color:var(--pine)">「同年代の平均以上」</b>を、誰にとっても分かりやすい目標に置いています。
-      数字を競うのではなく、まず自分の現在地を知る。そこがスタートです。
-    </p>
-    <div class="disclaimer">
-      ※ 数値の基準は一般的な目安です。実際の判定・診断は医療機関で行われます。
-    </div>
-    <aside class="supervise" aria-label="監修者情報">
-      <span class="sv-badge">監修</span>
-      <div class="sv-body">
-        <p class="sv-name">久保 肇 <span>医師</span></p>
-        <p class="sv-note">本プロジェクトの骨密度に関する医学的記述は、久保 肇 医師の監修を受けています。</p>
-      </div>
-    </aside>
-    <div class="learn-more">
-      <a href="/bone/about/">YAM値の読み方と骨量の変化をもっと詳しく →</a>
-    </div>
-  </div>
-</section>
-
-<!-- MEASURE: 測り方 -->
-<section class="why" id="measure">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">骨密度の測り方</div>
-      <h2>どこで、どうやって測るの？</h2>
-      <p class="desc">
-        特別な準備はいりません。お近くの施設で、数分あれば測れます。主な方法は次のとおりです。
-      </p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <h3>DEXA（デキサ）法</h3>
-        <p>ごく微量のX線で、腰や脚のつけ根を測る精度の高い方法。整形外科や健診センターなどで受けられます。数分で終わります。</p>
-      </div>
-      <div class="step">
-        <h3>超音波法</h3>
-        <p>かかとに超音波をあてる手軽な方法。被ばくがなく、薬局・ドラッグストアや健康イベントでよく使われます。</p>
-      </div>
-      <div class="step">
-        <h3>その他（MD法など）</h3>
-        <p>手のX線から推定する方法などもあります。まずは「受けやすいところで測ってみる」ことが第一歩です。</p>
-      </div>
-    </div>
-    <p class="desc" style="margin-top:30px;">
-      <b style="color:var(--ink)">測れる場所：</b>
-      整形外科・内科／健診センター・人間ドック（オプション）／一部の薬局・ドラッグストア／自治体の健康イベント など。
-    </p>
-    <div class="disclaimer">
-      測り方や施設は、どこでも構いません。このプロジェクトは「同年代平均を意識する」ことが目的なので、厳密な数値比較は必須ではありません。
-      ただ、開始時と120日後を<b>できれば同じ施設・同じ方法</b>で測ると、ご自身での見比べがしやすくなります。
-      費用の目安は、超音波なら無料〜千円程度のイベントもあり、DEXAは自費で数千円程度が一般的です（施設により異なります）。
-    </div>
-    <div style="margin-top:28px;">
-      <a class="btn btn-primary" href="https://www.google.com/maps/search/骨密度" target="_blank" rel="noopener">お近くの骨密度測定施設をさがす（Googleマップ）→</a>
-    </div>
-    <div class="learn-more">
-      <a href="/bone/measure/">測定方法の違いと精度、費用の目安を詳しく →</a>
-    </div>
-  </div>
-</section>
-
-<!-- LEARN HUB: 特集記事への導線 -->
-<section class="learn-hub" id="learn">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">骨密度を学ぶ</div>
-      <h2>もっと詳しく知りたい方へ</h2>
-      <p class="desc">
-        骨密度について知っておきたいことを、4つのテーマにまとめました。
-        測る前に読んでも、結果を見てから読んでも構いません。
-      </p>
-    </div>
-    <div class="learn-grid">
-      <a class="learn-card" href="/bone/about/">
-        <div class="n">01</div>
-        <h3>骨密度とは</h3>
-        <p>何を測った数値なのか。YAM値・Tスコアの読み方と、一生のうちで骨量がどう変わるか。</p>
-      </a>
-      <a class="learn-card" href="/bone/risk/">
-        <div class="n">02</div>
-        <h3>骨密度が下がると</h3>
-        <p>自覚症状がないまま進む理由と、折れやすい4つの部位。生活への影響まで。</p>
-      </a>
-      <a class="learn-card" href="/bone/measure/">
-        <div class="n">03</div>
-        <h3>測定方法</h3>
-        <p>4つの測定方法の違いと精度。受けられる場所、費用の目安、検査前の注意点。</p>
-      </a>
-      <a class="learn-card" href="/bone/improve/">
-        <div class="n">04</div>
-        <h3>骨密度を上げるには</h3>
-        <p>食事・運動・日光の基本。カルシウムを含む食品の一覧と、続けやすい形の探し方。</p>
-      </a>
-    </div>
-    <div class="learn-more allmore">
-      <a href="/bone/">骨密度を学ぶ・総合ガイドを見る →</a>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT WE DO -->
-<section id="do">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">私たちがすること</div>
-      <h2>「測る文化」を、日本につくる。</h2>
-      <p class="desc">
-        特別な機器も、難しい知識も必要ありません。
-        日本骨密度プロジェクトは、3つのシンプルな習慣を広げる活動です。
-      </p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="no">1</div>
-        <h3>知る</h3>
-        <p>今の自分の骨密度を知る。測る場所は、整形外科・健診センター・薬局・健康イベントなど、どこでも構いません。</p>
-      </div>
-      <div class="step">
-        <div class="no">2</div>
-        <h3>続ける</h3>
-        <p>カルベールを飲み、からだを動かし、日光を浴びる。カルシウムとビタミンDを意識した食事もあわせて、毎日しるしを記録する。120日この習慣を積み重ねて、骨を育てる。無理なく続けられる仕組みでサポートします。</p>
-      </div>
-      <div class="step">
-        <div class="no">3</div>
-        <h3>また測る</h3>
-        <p>120日後、もう一度測って現在地を確認する。目標は「同年代平均に近づき、平均以上をめざす」こと。</p>
-      </div>
     </div>
   </div>
 </section>
@@ -893,6 +836,63 @@ a.person-link:hover .read-more{text-decoration:underline;}
   </div>
 </section>
 
+<!-- WHAT WE DO -->
+<section id="do">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">私たちがすること</div>
+      <h2>「測る文化」を、日本につくる。</h2>
+      <p class="desc">
+        特別な機器も、難しい知識も必要ありません。
+        日本骨密度プロジェクトは、3つのシンプルな習慣を広げる活動です。
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="no">1</div>
+        <h3>知る</h3>
+        <p>今の自分の骨密度を知る。測る場所は、整形外科・健診センター・薬局・健康イベントなど、どこでも構いません。</p>
+      </div>
+      <div class="step">
+        <div class="no">2</div>
+        <h3>続ける</h3>
+        <p>下の「毎日の4つの習慣」にしるしをつけて、記録する。120日この習慣を積み重ねて、骨を育てる。無理なく続けられる仕組みでサポートします。</p>
+      </div>
+      <div class="step">
+        <div class="no">3</div>
+        <h3>また測る</h3>
+        <p>120日後、もう一度測って現在地を確認する。目標は「同年代平均に近づき、平均以上をめざす」こと。</p>
+      </div>
+    </div>
+    <div class="habits-wrap">
+      <h3 class="habits-title">毎日の、4つの習慣。</h3>
+      <div class="habits">
+        <div class="habit">
+          <div class="hi"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 9h26l-3.6 42a4 4 0 0 1-4 3.7h-10.8a4 4 0 0 1-4-3.7z" stroke="#2C5545" stroke-width="3"/><path d="M22.5 30c3 2.4 6.3-2.4 9.5 0s6.3-2.4 9.5 0" stroke="#C0813A" stroke-width="3"/></svg></div>
+          <div class="k">飲<span>のむ</span></div>
+          <p>カルベールを<br>1日1回、コップ一杯</p>
+        </div>
+        <div class="habit">
+          <div class="hi"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="35" cy="11" r="5" stroke="#2C5545" stroke-width="3"/><path d="M34 19l-4 14m0 0l-7 17m7-17l9 7-1.5 12M33 23l-9 6m10-5l9 5 6-2" stroke="#2C5545" stroke-width="3"/><path d="M12 26h6M9 34h6" stroke="#C0813A" stroke-width="3"/></svg></div>
+          <div class="k">動<span>うごく</span></div>
+          <p>散歩や体操で<br>からだを動かす</p>
+        </div>
+        <div class="habit">
+          <div class="hi"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="11" stroke="#2C5545" stroke-width="3"/><path d="M32 8v7M32 49v7M8 32h7M49 32h7M15 15l5 5M44 44l5 5M49 15l-5 5M20 44l-5 5" stroke="#C0813A" stroke-width="3"/></svg></div>
+          <div class="k">日<span>あびる</span></div>
+          <p>外に出て<br>日光を浴びる</p>
+        </div>
+        <div class="habit">
+          <div class="hi"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 32h44a22 22 0 0 1-13.5 18.5V54h-17v-3.5A22 22 0 0 1 10 32z" stroke="#2C5545" stroke-width="3"/><path d="M26 12c-3 4 3 6.5 0 10.5M38 12c-3 4 3 6.5 0 10.5" stroke="#C0813A" stroke-width="3"/></svg></div>
+          <div class="k">食<span>たべる</span></div>
+          <p>カルシウム・ビタミンDを<br>意識した食事</p>
+        </div>
+      </div>
+      <p class="habit-note">そして毎日、記録シートのカレンダーに○をつける。<b>続いた日々が目に見えてたまり、自信に変わります。</b></p>
+    </div>
+  </div>
+</section>
+
 <!-- CHALLENGE -->
 <section class="challenge" id="challenge">
   <div class="wrap">
@@ -930,7 +930,8 @@ a.person-link:hover .read-more{text-decoration:underline;}
       カルベールは食品であり、疾病の治療・予防や、骨密度の改善を保証するものではありません。
     </div>
     <div style="text-align:center;margin-top:34px;">
-      <a class="btn btn-primary" href="challenge.html">骨習慣プログラムの進め方を見る →</a>
+      <a class="btn btn-primary" href="challenge.html">120日の進め方を見る →</a>
+      <p class="cap-note">第1期は定員制です。定員に達し次第、締め切ります。</p>
     </div>
   </div>
 </section>
@@ -1012,6 +1013,146 @@ a.person-link:hover .read-more{text-decoration:underline;}
   </div>
 </section>
 
+<!-- ABOUT: 骨密度とは（要約＋くわしくはアコーディオン） -->
+<section id="about" class="why edu">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:30px;">
+      <div class="kicker">骨密度を知る</div>
+      <h2>そもそも「骨密度」とは？</h2>
+      <p class="desc">
+        骨密度（BMD）は、骨に含まれるカルシウムなどのミネラルの量 ── いわば骨の「詰まり具合」です。
+        測定結果はYAM値（若年成人平均比）・Tスコア・Zスコアなどの数値で示されます。
+        だから私たちは、<b style="color:var(--pine)">「同年代の平均以上」</b>を、誰にとっても分かりやすい目標に置いています。
+        数字を競うのではなく、まず自分の現在地を知る。そこがスタートです。
+      </p>
+    </div>
+
+    <details class="edu-more">
+      <summary>YAM値・Tスコア・Zスコアの読み方を、くわしく見る</summary>
+      <div class="edu-body">
+        <div class="steps">
+          <div class="step">
+            <h3>YAM（若年成人平均値）</h3>
+            <p>20〜44歳の平均骨密度を100%として、自分が何%かを示します。目安は、80%以上＝正常、70〜80%＝骨量が減りぎみ、70%未満＝骨粗しょう症とされます。</p>
+          </div>
+          <div class="step">
+            <h3>T（ティー）スコア</h3>
+            <p>若年成人の平均を基準に、どれだけ離れているかを表す値。−1.0以上＝正常、−1.0〜−2.5＝低骨量、−2.5以下＝骨粗しょう症（WHOの基準）。</p>
+          </div>
+          <div class="step">
+            <h3>Z（ゼット）スコア</h3>
+            <p>同じ年代・同じ性別の平均と比べた値。このプロジェクトが大切にする「同年代平均」に、いちばん近い指標です。</p>
+          </div>
+        </div>
+        <div class="disclaimer">
+          ※ 数値の基準は一般的な目安です。実際の判定・診断は医療機関で行われます。
+        </div>
+      </div>
+    </details>
+
+    <aside class="supervise" aria-label="監修者情報">
+      <span class="sv-badge">監修</span>
+      <div class="sv-body">
+        <p class="sv-name">久保 肇 <span>医師</span></p>
+        <p class="sv-note">本プロジェクトの骨密度に関する医学的記述は、久保 肇 医師の監修を受けています。</p>
+      </div>
+    </aside>
+    <div class="learn-more">
+      <a href="/bone/about/">YAM値の読み方と骨量の変化をもっと詳しく →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEASURE: 測り方（要約＋くわしくはアコーディオン） -->
+<section id="measure" class="edu">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:30px;">
+      <div class="kicker">骨密度の測り方</div>
+      <h2>どこで、どうやって測るの？</h2>
+      <p class="desc">
+        特別な準備はいりません。整形外科・健診センター・一部の薬局やドラッグストア・自治体の健康イベントなどで、数分あれば測れます。
+        主な方法は、精度の高いDEXA（デキサ）法と、手軽な超音波法です。
+      </p>
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <a class="btn btn-primary" href="https://www.google.com/maps/search/骨密度" target="_blank" rel="noopener">お近くの骨密度測定施設をさがす（Googleマップ）→</a>
+    </div>
+
+    <details class="edu-more">
+      <summary>測定方法のちがいと、費用の目安をくわしく見る</summary>
+      <div class="edu-body">
+        <div class="steps">
+          <div class="step">
+            <h3>DEXA（デキサ）法</h3>
+            <p>ごく微量のX線で、腰や脚のつけ根を測る精度の高い方法。整形外科や健診センターなどで受けられます。数分で終わります。</p>
+          </div>
+          <div class="step">
+            <h3>超音波法</h3>
+            <p>かかとに超音波をあてる手軽な方法。被ばくがなく、薬局・ドラッグストアや健康イベントでよく使われます。</p>
+          </div>
+          <div class="step">
+            <h3>その他（MD法など）</h3>
+            <p>手のX線から推定する方法などもあります。まずは「受けやすいところで測ってみる」ことが第一歩です。</p>
+          </div>
+        </div>
+        <p class="desc" style="margin-top:30px;">
+          <b style="color:var(--ink)">測れる場所：</b>
+          整形外科・内科／健診センター・人間ドック（オプション）／一部の薬局・ドラッグストア／自治体の健康イベント など。
+        </p>
+        <div class="disclaimer">
+          測り方や施設は、どこでも構いません。このプロジェクトは「同年代平均を意識する」ことが目的なので、厳密な数値比較は必須ではありません。
+          ただ、開始時と120日後を<b>できれば同じ施設・同じ方法</b>で測ると、ご自身での見比べがしやすくなります。
+          費用の目安は、超音波なら無料〜千円程度のイベントもあり、DEXAは自費で数千円程度が一般的です（施設により異なります）。
+        </div>
+      </div>
+    </details>
+
+    <div class="learn-more">
+      <a href="/bone/measure/">測定方法の違いと精度、費用の目安を詳しく →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN HUB: 特集記事への導線 -->
+<section class="learn-hub" id="learn">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">骨密度を学ぶ</div>
+      <h2>もっと詳しく知りたい方へ</h2>
+      <p class="desc">
+        骨密度について知っておきたいことを、4つのテーマにまとめました。
+        測る前に読んでも、結果を見てから読んでも構いません。
+      </p>
+    </div>
+    <div class="learn-grid">
+      <a class="learn-card" href="/bone/about/">
+        <div class="n">01</div>
+        <h3>骨密度とは</h3>
+        <p>何を測った数値なのか。YAM値・Tスコアの読み方と、一生のうちで骨量がどう変わるか。</p>
+      </a>
+      <a class="learn-card" href="/bone/risk/">
+        <div class="n">02</div>
+        <h3>骨密度が下がると</h3>
+        <p>自覚症状がないまま進む理由と、折れやすい4つの部位。生活への影響まで。</p>
+      </a>
+      <a class="learn-card" href="/bone/measure/">
+        <div class="n">03</div>
+        <h3>測定方法</h3>
+        <p>4つの測定方法の違いと精度。受けられる場所、費用の目安、検査前の注意点。</p>
+      </a>
+      <a class="learn-card" href="/bone/improve/">
+        <div class="n">04</div>
+        <h3>骨密度を上げるには</h3>
+        <p>食事・運動・日光の基本。カルシウムを含む食品の一覧と、続けやすい形の探し方。</p>
+      </a>
+    </div>
+    <div class="learn-more allmore">
+      <a href="/bone/">骨密度を学ぶ・総合ガイドを見る →</a>
+    </div>
+  </div>
+</section>
+
 <!-- MANIFESTO -->
 <section class="manifesto">
   <div class="narrow mf-inner">
@@ -1078,7 +1219,7 @@ a.person-link:hover .read-more{text-decoration:underline;}
 </footer>
 
 <div class="mobile-cta" id="mobileCta">
-  <a href="challenge.html">骨習慣プログラムの進め方を見る →</a>
+  <a href="challenge.html">私も、始めてみる →</a>
 </div>
 
 <script>
