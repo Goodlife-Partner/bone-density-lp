@@ -3,9 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 開発中は検索避け。公開時にこの1行を削除してください -->
 <title>骨習慣プログラムの進め方｜日本骨密度プロジェクト</title>
 <meta name="description" content="日本骨密度プロジェクト「骨習慣プログラム」の進め方。申し込みから、開始前の測定、120日間の継続、再測定までの流れと参加費をご案内します。">
+
+<!-- SEO / canonical / OGP -->
+<link rel="canonical" href="https://kotsumitsudo.jp/challenge.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="日本骨密度プロジェクト">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="骨習慣プログラムの進め方｜日本骨密度プロジェクト">
+<meta property="og:description" content="日本骨密度プロジェクト「骨習慣プログラム」の進め方。申し込みから、開始前の測定、120日間の継続、再測定までの流れと参加費をご案内します。">
+<meta property="og:url" content="https://kotsumitsudo.jp/challenge.html">
+<meta property="og:image" content="https://kotsumitsudo.jp/assets/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="骨習慣プログラムの進め方｜日本骨密度プロジェクト">
+<meta name="twitter:description" content="日本骨密度プロジェクト「骨習慣プログラム」の進め方。申し込みから、開始前の測定、120日間の継続、再測定までの流れと参加費をご案内します。">
+<meta name="twitter:image" content="https://kotsumitsudo.jp/assets/img/ogp.jpg">
+
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0171GTLM5"></script>
@@ -163,6 +179,31 @@ section{padding:78px 0;}
   .flow-num{width:48px;height:48px;font-size:18px;}
   .price-card{padding:30px 22px;}
 }
+
+/* ===== v2: indexと揃える追加分 ===== */
+.step-rail{background:var(--ivory);border-bottom:1px solid var(--line);padding:26px 0;}
+.rail{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.rail li{display:flex;align-items:baseline;gap:10px;font-size:13.5px;color:var(--muted);line-height:1.6;}
+.rail .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sage);color:var(--pine);font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;align-self:center;}
+.rail b{font-family:"Shippori Mincho B1",serif;color:var(--ink);font-size:15px;margin-right:4px;}
+.habit-mini{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+.habit-mini span{display:inline-flex;align-items:center;gap:7px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 15px 7px 10px;}
+.habit-mini span svg{width:24px;height:24px;display:block;}
+.habit-mini b{font-family:"Shippori Mincho B1",serif;font-size:16px;font-weight:800;color:var(--pine);}
+/* 追従CTA */
+.mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(33,63,51,.96);box-shadow:0 -4px 18px rgba(0,0,0,.18);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transform:translateY(130%);transition:transform .3s ease;}
+.mobile-cta.show{transform:translateY(0);}
+.mobile-cta.at-bottom{transform:translateY(130%);}
+.mobile-cta a{display:block;text-align:center;text-decoration:none;
+  background:var(--amber);color:#fff;font-family:"Shippori Mincho B1",serif;font-weight:700;
+  font-size:15px;letter-spacing:.04em;padding:14px;border-radius:10px;
+  box-shadow:0 2px 8px rgba(192,129,58,.45);}
+@media(max-width:880px){.mobile-cta{display:block;}}
+@media(max-width:640px){.rail{grid-template-columns:1fr;gap:10px;}}
 </style>
 </head>
 <body>
@@ -196,6 +237,17 @@ section{padding:78px 0;}
       自分の骨と向き合う、120日間です。
     </p>
     <span class="ph-tag">まず、測ろう。そして、120日。</span>
+  </div>
+</section>
+
+<!-- STEP RAIL: 3ステップ想起（indexと共通言語） -->
+<section class="step-rail">
+  <div class="wrap">
+    <ol class="rail">
+      <li><span class="n">1</span><b>測る</b>今の骨密度を知る</li>
+      <li><span class="n">2</span><b>120日つづける</b>毎日の4習慣を記録</li>
+      <li><span class="n">3</span><b>また測る</b>同じ施設で見比べる</li>
+    </ol>
   </div>
 </section>
 
@@ -254,6 +306,12 @@ section{padding:78px 0;}
         <div class="flow-body">
           <h3>毎日つづける（飲む・動く・日光・食事）</h3>
           <p>1日1回100mlを目安にカルベールを飲み、からだを動かし、日光を浴び、カルシウムとビタミンDを意識した食事を。できた「しるし」を記録シートにぬるだけ。全部そろわなくて大丈夫です。あなたの手元に残る、あなただけの記録です。</p>
+          <div class="habit-mini">
+            <span><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 9h26l-3.6 42a4 4 0 0 1-4 3.7h-10.8a4 4 0 0 1-4-3.7z" stroke="#2C5545" stroke-width="3"/><path d="M22.5 30c3 2.4 6.3-2.4 9.5 0s6.3-2.4 9.5 0" stroke="#C0813A" stroke-width="3"/></svg><b>飲</b></span>
+            <span><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="35" cy="11" r="5" stroke="#2C5545" stroke-width="3"/><path d="M34 19l-4 14m0 0l-7 17m7-17l9 7-1.5 12M33 23l-9 6m10-5l9 5 6-2" stroke="#2C5545" stroke-width="3"/><path d="M12 26h6M9 34h6" stroke="#C0813A" stroke-width="3"/></svg><b>動</b></span>
+            <span><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="11" stroke="#2C5545" stroke-width="3"/><path d="M32 8v7M32 49v7M8 32h7M49 32h7M15 15l5 5M44 44l5 5M49 15l-5 5M20 44l-5 5" stroke="#C0813A" stroke-width="3"/></svg><b>日</b></span>
+            <span><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 32h44a22 22 0 0 1-13.5 18.5V54h-17v-3.5A22 22 0 0 1 10 32z" stroke="#2C5545" stroke-width="3"/><path d="M26 12c-3 4 3 6.5 0 10.5M38 12c-3 4 3 6.5 0 10.5" stroke="#C0813A" stroke-width="3"/></svg><b>食</b></span>
+          </div>
         </div>
       </div>
       <div class="flow-item">
@@ -290,7 +348,7 @@ section{padding:78px 0;}
     </div>
 
     <div class="price-card">
-      <div class="tag">120日 骨習慣プログラム／ お一人さま2回まで</div>
+      <div class="tag">第1期 参加者募集中 ／ 定員制</div>
       <div class="amount"><b>5,500</b><span>円 / 月（税込・送料込み）</span></div>
       <div class="total">× 4か月＝合計 22,000円。4回のお支払いで自動終了します。</div>
       <ul>
@@ -301,7 +359,7 @@ section{padding:78px 0;}
       </ul>
       <p class="meta">
         お支払いは、お申し込み後にStripeでのカード決済（月5,500円 × 4回で自動終了）をご案内します。<br>
-        「同じ120日を、もう一度」続けたい方は、お一人さま2回まで参加いただけます。
+        「同じ120日を、もう一度」続けたい方は、お一人さま2回まで参加いただけます。<br><b style="color:var(--pine)">第1期は定員制です。定員に達し次第、締め切ります。</b>
       </p>
     </div>
 
@@ -367,7 +425,7 @@ section{padding:78px 0;}
       まずは、骨習慣プログラムに申し込みましょう。
     </p>
     <div class="apply-cta">
-      <a class="btn btn-primary" href="https://forms.gle/hWEqyKfsLPbHXhML9" target="_blank" rel="noopener" data-form="1">骨習慣プログラムを申し込む →</a>
+      <a class="btn btn-primary" href="https://forms.gle/hWEqyKfsLPbHXhML9" target="_blank" rel="noopener" data-form="1">私も、始めてみる →</a>
       <a class="btn btn-onwarm" href="https://line.me/R/oaMessage/%40538fmpho/?%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%A7%E3%81%99" target="_blank" rel="noopener" data-line="1">LINEでお役立ち情報を受け取る</a>
     </div>
     <p class="fine">
@@ -377,6 +435,10 @@ section{padding:78px 0;}
 </section>
 
 <!-- FOOTER -->
+<div class="mobile-cta" id="mobileCta">
+  <a href="#apply">私も、始めてみる →</a>
+</div>
+
 <footer class="footer">
   <div class="wrap">
     <div class="top">
@@ -405,6 +467,16 @@ section{padding:78px 0;}
   document.querySelector('.menu-toggle')?.addEventListener('click',function(){
     document.querySelector('#apply')?.scrollIntoView({behavior:'smooth'});
   });
+  var mc=document.getElementById('mobileCta');
+  if(mc){
+    var toggle=function(){ if(window.scrollY>460){mc.classList.add('show');}else{mc.classList.remove('show');} };
+    window.addEventListener('scroll',toggle,{passive:true}); toggle();
+    var ap=document.querySelector('.apply'), ft=document.querySelector('.footer');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){mc.classList.toggle('at-bottom',e.isIntersecting);});},{threshold:0});
+      if(ap)io.observe(ap); if(ft)io.observe(ft);
+    }
+  }
 </script>
 </body>
 </html>
