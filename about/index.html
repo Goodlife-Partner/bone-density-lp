@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     ▼ アクセス解析（GTM/GA4）
+     index.html の <head> 先頭にある GTM スニペットと、
+     </body> 直前の <noscript> を “そのまま” コピペしてください。
+     （kotsumitsudo.jp の GTM コンテナIDを確実に一致させるため、
+      ここでは仮置きせず、既存ページからの複製を推奨します）
+     ============================================================ -->
+
+<title>日本骨密度プロジェクトとは｜骨を測って育てる習慣づくりの取り組み【公式】</title>
+<meta name="description" content="日本骨密度プロジェクトは、骨の健康を“測って、育てる”毎日の習慣を全国に広げる取り組みです。運営はヘルスィング株式会社、医学監修は久保肇先生。活動内容・理念・参加のしかたをご紹介します。">
+
+<link rel="canonical" href="https://kotsumitsudo.jp/about/">
+
+<!-- OGP / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="日本骨密度プロジェクト">
+<meta property="og:title" content="日本骨密度プロジェクトとは｜骨を測って育てる習慣づくりの取り組み">
+<meta property="og:description" content="骨の健康を“測って、育てる”毎日の習慣を全国に広げる取り組み。運営はヘルスィング株式会社、医学監修は久保肇先生。">
+<meta property="og:url" content="https://kotsumitsudo.jp/about/">
+<meta property="og:image" content="https://kotsumitsudo.jp/assets/img/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="日本骨密度プロジェクトとは｜骨を測って育てる習慣づくりの取り組み">
+<meta name="twitter:description" content="骨の健康を“測って、育てる”毎日の習慣を全国に広げる取り組み。運営：ヘルスィング株式会社／医学監修：久保肇先生。">
+<meta name="twitter:image" content="https://kotsumitsudo.jp/assets/img/ogp.png">
+
+<!-- Favicon（既存の実ファイルを参照） -->
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     構造化データ
+     ①BreadcrumbList ②AboutPage ③Organization（サイト共通の@id）
+     ④FAQPage（「日本骨密度プロジェクトとは」を定義するQ&A）
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kotsumitsudo.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "日本骨密度プロジェクトとは", "item": "https://kotsumitsudo.jp/about/" }
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://kotsumitsudo.jp/about/#aboutpage",
+      "url": "https://kotsumitsudo.jp/about/",
+      "name": "日本骨密度プロジェクトとは",
+      "description": "日本骨密度プロジェクトの活動内容・理念・運営体制の紹介ページ。",
+      "inLanguage": "ja",
+      "isPartOf": { "@id": "https://kotsumitsudo.jp/#website" },
+      "about": { "@id": "https://kotsumitsudo.jp/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://kotsumitsudo.jp/#organization",
+      "name": "日本骨密度プロジェクト",
+      "alternateName": "骨密度プロジェクト",
+      "url": "https://kotsumitsudo.jp/",
+      "logo": "https://kotsumitsudo.jp/assets/img/ogp.png",
+      "description": "骨の健康を“測って、育てる”毎日の習慣を全国に広げる取り組み。情報発信、骨密度測定のご案内、120日 骨習慣プログラムの運営を行う。",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "ヘルスィング株式会社"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kotsumitsudo.jp/about/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "日本骨密度プロジェクトとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "骨の健康を「測って、育てる」毎日の習慣を全国に広げるための取り組みです。骨密度に関する情報発信、測定のご案内、120日 骨習慣プログラムの運営を行っています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "誰が運営していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ヘルスィング株式会社が運営しています。医学監修は医師の久保肇先生が務めています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「120日 骨習慣プログラム」では何をしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はじめに骨密度を測り、飲む・動く・日光を浴びる・食べるの4つの習慣と記録を120日つづけ、もう一度測って自分の数字で確かめます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "参加するにはどうすればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "「120日 骨習慣プログラム」のご案内ページからお申し込みいただけます。骨密度について学ぶだけであれば、情報ページを無料でご覧いただけます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "骨密度はどこで測れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "医療機関や健診施設などで測定できます。検査の種類・精度・測定できる場所については「骨密度の測り方」のページで詳しく紹介しています。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --pine:#2C5545;
+    --pine-deep:#213F33;
+    --amber:#C0813A;
+    --amber-light:#D9A55B;
+    --ivory:#F7F3EA;
+    --paper:#FBF8F1;
+    --ink:#2A2A26;
+    --ink-soft:#5A5B54;
+    --line:#E4DCCB;
+    --maxw:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    text-align:justify;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--pine);text-decoration:none}
+  .mincho{font-family:"Shippori Mincho B1",serif}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- Header ---------- */
+  .site-head{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,243,234,.92);
+    backdrop-filter:saturate(1.2) blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:"Shippori Mincho B1",serif;font-weight:600;color:var(--pine-deep);font-size:1.02rem;letter-spacing:.02em}
+  .brand small{display:block;font-family:"Zen Kaku Gothic New";font-weight:400;font-size:.62rem;letter-spacing:.22em;color:var(--amber);margin-top:2px}
+  .nav-cta{
+    font-size:.82rem;font-weight:700;color:#fff;background:var(--pine);
+    padding:8px 16px;border-radius:999px;white-space:nowrap;transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--pine-deep)}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(120% 80% at 85% 0%, rgba(217,165,91,.14), transparent 55%),
+      linear-gradient(180deg, var(--pine-deep), var(--pine) 70%, #2f5a49);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero:after{
+    content:"";position:absolute;right:-8%;bottom:-40%;width:60%;height:180%;
+    background:radial-gradient(circle, rgba(217,165,91,.10), transparent 60%);pointer-events:none;
+  }
+  .hero .wrap{padding:64px 22px 60px;position:relative;z-index:1}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.24em;
+    color:var(--amber-light);border:1px solid rgba(217,165,91,.5);
+    padding:5px 16px;border-radius:999px;margin-bottom:22px;letter-spacing:.14em;
+  }
+  .hero h1{
+    font-family:"Shippori Mincho B1",serif;font-weight:600;
+    font-size:clamp(1.9rem,5.4vw,3rem);line-height:1.4;margin:0 0 20px;letter-spacing:.01em;
+  }
+  .hero .lede{
+    font-size:clamp(1.02rem,2.4vw,1.22rem);line-height:2.1;max-width:38em;
+    color:#f4efe4;margin:0 0 26px;text-align:left;
+  }
+  .hero .lede b{color:#fff;font-weight:700;border-bottom:2px solid var(--amber-light);padding-bottom:1px}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.86rem;color:#d9e2da;
+    border-top:1px solid rgba(255,255,255,.16);padding-top:20px;margin-top:6px;text-align:left;
+  }
+  .hero-meta span{display:inline-flex;align-items:center;gap:7px}
+  .hero-meta b{color:#fff;font-weight:700}
+  .tagline{
+    font-family:"Shippori Mincho B1",serif;font-size:1.05rem;color:var(--amber-light);
+    letter-spacing:.06em;margin-top:26px;
+  }
+
+  /* ---------- Section base ---------- */
+  section{padding:66px 0}
+  .sec-eyebrow{
+    font-size:.74rem;font-weight:700;letter-spacing:.14em;color:var(--amber);
+    display:block;margin-bottom:12px;
+  }
+  h2.sec-title{
+    font-family:"Shippori Mincho B1",serif;font-weight:600;
+    font-size:clamp(1.4rem,3.6vw,1.9rem);line-height:1.5;color:var(--pine-deep);
+    margin:0 0 8px;letter-spacing:.01em;
+  }
+  .sec-title + .sec-sub{color:var(--ink-soft);font-size:.98rem;margin:0 0 34px;max-width:40em}
+  .prose p{margin:0 0 20px;max-width:42em}
+  .prose p:last-child{margin-bottom:0}
+
+  /* ---------- Definition pillars（知る・測る・続ける） ---------- */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
+  .pillar{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:28px 22px;position:relative;transition:transform .2s,box-shadow .2s;
+  }
+  .pillar:hover{transform:translateY(-3px);box-shadow:0 12px 30px -18px rgba(33,63,51,.4)}
+  .pillar .pnum{
+    font-family:"Shippori Mincho B1",serif;color:var(--amber);font-size:.78rem;
+    letter-spacing:.2em;font-weight:700;
+  }
+  .pillar h3{
+    font-family:"Shippori Mincho B1",serif;font-weight:600;color:var(--pine-deep);
+    font-size:1.3rem;margin:8px 0 10px;
+  }
+  .pillar p{font-size:.92rem;color:var(--ink-soft);margin:0;text-align:left}
+  .pillar a.more{display:inline-block;margin-top:14px;font-size:.84rem;font-weight:700;color:var(--pine)}
+  .pillar a.more:hover{color:var(--amber)}
+
+  /* ---------- Why (band) ---------- */
+  .band{background:var(--pine-deep);color:#f3efe6}
+  .band h2.sec-title{color:#fff}
+  .band .sec-eyebrow{color:var(--amber-light)}
+  .band .prose p{color:#e7e0d4}
+  .band blockquote{
+    font-family:"Shippori Mincho B1",serif;font-size:clamp(1.2rem,3vw,1.6rem);
+    line-height:1.9;color:#fff;border-left:3px solid var(--amber);
+    padding-left:22px;margin:30px 0 0;max-width:24em;
+  }
+
+  /* ---------- Values ---------- */
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .value{padding:26px 20px;border-top:2px solid var(--amber);background:var(--paper);border-radius:0 0 12px 12px}
+  .value .vk{font-family:"Shippori Mincho B1",serif;font-size:1.16rem;font-weight:600;color:var(--pine-deep);margin:0 0 8px}
+  .value p{font-size:.9rem;color:var(--ink-soft);margin:0;text-align:left}
+
+  /* ---------- Trust / 運営 ---------- */
+  .trust{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:34px 30px}
+  .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .trust h3{font-family:"Shippori Mincho B1",serif;font-weight:600;color:var(--pine-deep);font-size:1.12rem;margin:0 0 12px}
+  .trust dl{margin:0}
+  .trust dt{font-size:.72rem;letter-spacing:.14em;color:var(--amber);font-weight:700;margin-top:14px}
+  .trust dt:first-child{margin-top:0}
+  .trust dd{margin:3px 0 0;font-size:.98rem;color:var(--ink)}
+  .trust .links{margin-top:18px;font-size:.86rem}
+  .trust .links a{margin-right:16px;border-bottom:1px solid var(--line);padding-bottom:1px}
+
+  /* ---------- Voices（社会的証明・軽く） ---------- */
+  .voices{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .voice-card{
+    background:var(--pine);color:#fff;border-radius:16px;padding:26px 24px;
+    display:flex;flex-direction:column;justify-content:space-between;min-height:150px;
+    transition:transform .2s;
+  }
+  .voice-card:hover{transform:translateY(-3px)}
+  .voice-card q{font-family:"Shippori Mincho B1",serif;font-size:1.22rem;line-height:1.7;display:block;quotes:none}
+  .voice-card .who{font-size:.86rem;color:#d9e2da;margin-top:16px}
+  .voice-card .who b{color:#fff;font-weight:700}
+  .voice-card .read{color:var(--amber-light);font-size:.82rem;font-weight:700;margin-top:10px}
+
+  /* ---------- FAQ ---------- */
+  .faq details{border-bottom:1px solid var(--line);padding:6px 0}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:16px 34px 16px 4px;position:relative;
+    font-family:"Shippori Mincho B1",serif;font-weight:600;color:var(--pine-deep);font-size:1.04rem;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{
+    content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;
+    border-right:2px solid var(--amber);border-bottom:2px solid var(--amber);
+    transform:translateY(-70%) rotate(45deg);transition:transform .2s;
+  }
+  .faq details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+  .faq .fa{padding:0 4px 18px;color:var(--ink-soft);font-size:.95rem;max-width:44em}
+
+  /* ---------- Final CTA ---------- */
+  .final{
+    background:linear-gradient(180deg,var(--pine),var(--pine-deep));color:#fff;text-align:center;
+  }
+  .final h2{font-family:"Shippori Mincho B1",serif;font-weight:600;font-size:clamp(1.5rem,4vw,2.1rem);margin:0 0 14px;line-height:1.5}
+  .final p{color:#e0e8e1;max-width:32em;margin:0 auto 30px;text-align:center}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-block;font-weight:700;border-radius:999px;padding:15px 34px;font-size:1rem;transition:transform .15s,background .2s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--amber);color:#33230f}
+  .btn-primary:hover{background:var(--amber-light)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  .btn-ghost:hover{border-color:#fff}
+  .scarcity{margin-top:20px;font-size:.82rem;color:var(--amber-light);letter-spacing:.04em}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ivory);border-top:1px solid var(--line);padding:40px 0 46px;font-size:.86rem;color:var(--ink-soft)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+  footer nav a{margin-right:18px;color:var(--ink-soft)}
+  footer nav a:hover{color:var(--pine)}
+  .disclaimer{margin-top:24px;font-size:.74rem;line-height:1.9;color:#8a8b82;max-width:56em}
+  .copy{font-size:.76rem;color:#a3a498;margin-top:18px}
+
+  @media(max-width:760px){
+    .pillars,.values,.trust-grid,.voices{grid-template-columns:1fr}
+    section{padding:52px 0}
+    .hero .wrap{padding:52px 22px 48px}
+    .nav-cta{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== Header ===================== -->
+<header class="site-head">
+  <div class="wrap">
+    <a href="/" class="brand">日本骨密度プロジェクト</a>
+    <a href="/challenge.html" class="nav-cta">プログラムを見る →</a>
+  </div>
+</header>
+
+<!-- ===================== Hero ===================== -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">私たちについて</span>
+    <h1>日本骨密度プロジェクトとは</h1>
+    <p class="lede">
+      日本骨密度プロジェクトは、骨の健康を<b>「測って、育てる」</b>毎日の習慣を、
+      全国に広げていくための取り組みです。骨密度を“自分の数字”として身近にし、
+      一日ずつの小さな習慣で向き合っていく——その文化づくりを目指しています。
+    </p>
+    <div class="hero-meta">
+      <span>運営：<b>ヘルスィング株式会社</b></span>
+      <span>医学監修：<b>久保 肇 先生</b></span>
+      <span>企画：<b>120日 骨習慣プログラム</b></span>
+    </div>
+    <div class="tagline mincho">100歳まで、自分の脚で。</div>
+  </div>
+</div>
+
+<!-- ===================== 3本柱：知る・測る・続ける ===================== -->
+<section>
+  <div class="wrap">
+    <span class="sec-eyebrow">私たちの活動</span>
+    <h2 class="sec-title">私たちがしている、3つのこと。</h2>
+    <p class="sec-sub">むずかしいことは、ひとつもありません。「知る・測る・続ける」——この順番を、あなたのペースで。</p>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pnum">01</span>
+        <h3>知る</h3>
+        <p>骨密度とは何か、なぜ大切なのか。読みものとして、やさしく学べる情報をお届けしています。</p>
+        <a class="more" href="/bone/">骨密度を学ぶ →</a>
+      </div>
+      <div class="pillar">
+        <span class="pnum">02</span>
+        <h3>測る</h3>
+        <p>まずは、いまの自分の数字を知ることから。検査の種類や、測定できる場所をご案内します。</p>
+        <a class="more" href="/bone/measure/">測り方を見る →</a>
+      </div>
+      <div class="pillar">
+        <span class="pnum">03</span>
+        <h3>続ける</h3>
+        <p>飲む・動く・日光を浴びる・食べる。4つの習慣と記録を、120日いっしょに。</p>
+        <a class="more" href="/challenge.html">プログラムを見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== なぜ（ミッション） ===================== -->
+<div class="band">
+  <section>
+    <div class="wrap">
+      <span class="sec-eyebrow">なぜ、いま</span>
+      <h2 class="sec-title">なぜ、このプロジェクトを立ち上げたのか。</h2>
+      <div class="prose">
+        <p>
+          骨密度は、痛みなどの自覚症状がないまま、年齢とともに少しずつ変化していく指標です。
+          けれど、体重や血圧とちがって、日常のなかで測る機会はほとんどありません。
+        </p>
+        <p>
+          「気づいたときには」ではなく、「まず、知る」ことから始めたい。
+          そして数字を眺めて不安になるのではなく、毎日の小さな習慣で、前向きに向き合っていきたい。
+          日本骨密度プロジェクトは、そんな願いから生まれました。
+        </p>
+        <blockquote>骨は、毎日の習慣で、育てる。</blockquote>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== 大切にしていること ===================== -->
+<section>
+  <div class="wrap">
+    <span class="sec-eyebrow">私たちの姿勢</span>
+    <h2 class="sec-title">私たちが、大切にしていること。</h2>
+    <div class="values">
+      <div class="value">
+        <p class="vk">脅かすより、知ることから。</p>
+        <p>不安をあおるのではなく、正しく知っていただくこと。それが、前向きな一歩の出発点だと考えています。</p>
+      </div>
+      <div class="value">
+        <p class="vk">特別より、毎日の習慣を。</p>
+        <p>いちどの頑張りではなく、続けられる小ささを大切に。だれもが、今日から始められることを。</p>
+      </div>
+      <div class="value">
+        <p class="vk">感覚より、測って確かめる。</p>
+        <p>「なんとなく」ではなく、はじめと終わりに測って、自分の数字で確かめる。それが私たちの流儀です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 運営・監修（信頼） ===================== -->
+<section style="background:var(--ivory)">
+  <div class="wrap">
+    <span class="sec-eyebrow">運営体制</span>
+    <h2 class="sec-title">運営と、監修。</h2>
+    <p class="sec-sub">どこの、だれが取り組んでいるのか。責任の所在を、はっきりと。</p>
+    <div class="trust">
+      <div class="trust-grid">
+        <div>
+          <h3>運営会社</h3>
+          <dl>
+            <dt>運営</dt><dd>ヘルスィング株式会社</dd>
+            <dt>代表者</dt><dd>太田 廣彦</dd>
+            <dt>事業</dt><dd>健康・食品に関する情報発信および商品提供</dd>
+          </dl>
+          <div class="links">
+            <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+            <a href="/privacy.html">プライバシーポリシー</a>
+          </div>
+        </div>
+        <div>
+          <h3>医学監修</h3>
+          <dl>
+            <dt>監修</dt><dd>久保 肇 先生（医師）</dd>
+            <dt>役割</dt><dd>骨密度に関する情報ページの内容確認・監修</dd>
+          </dl>
+          <p style="font-size:.9rem;color:var(--ink-soft);margin:16px 0 0;text-align:left">
+            「知る」ためのコンテンツは、医師の監修のもとで作成しています。
+            正確で、安心して読んでいただける情報づくりを心がけています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 参加者の声（社会的証明・軽く） ===================== -->
+<section>
+  <div class="wrap">
+    <span class="sec-eyebrow">参加者の声</span>
+    <h2 class="sec-title">続けている、人たちがいます。</h2>
+    <p class="sec-sub">年齢を重ねても、自分の脚で歩き、挑戦しつづける。そんな先輩たちの生き方を紹介しています。</p>
+    <div class="voices">
+      <a class="voice-card" href="/voice/shinomaki.html">
+        <q>強さの土台は、骨にある。</q>
+        <div>
+          <div class="who"><b>篠巻 政利</b>さん ／ 79歳・柔道無差別級 元世界チャンピオン</div>
+          <div class="read">物語を読む →</div>
+        </div>
+      </a>
+      <a class="voice-card" href="/voice/satomi.html">
+        <q>舞も、暮らしも、一日にしてならず。</q>
+        <div>
+          <div class="who"><b>里見 香華</b>さん ／ 93歳・日本舞踊 里見流 家元</div>
+          <div class="read">物語を読む →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section style="background:var(--ivory)">
+  <div class="wrap">
+    <span class="sec-eyebrow">はじめての方へ</span>
+    <h2 class="sec-title">よくあるご質問</h2>
+    <div class="faq" style="margin-top:22px">
+      <details open>
+        <summary>日本骨密度プロジェクトとは何ですか？</summary>
+        <div class="fa">骨の健康を「測って、育てる」毎日の習慣を全国に広げるための取り組みです。骨密度に関する情報発信、測定のご案内、そして「120日 骨習慣プログラム」の運営を行っています。</div>
+      </details>
+      <details>
+        <summary>誰が運営していますか？</summary>
+        <div class="fa">ヘルスィング株式会社が運営しています。骨密度に関する情報ページは、医師の久保肇先生の監修のもとで作成しています。</div>
+      </details>
+      <details>
+        <summary>「120日 骨習慣プログラム」では何をしますか？</summary>
+        <div class="fa">はじめに骨密度を測り、「飲む・動く・日光を浴びる・食べる」の4つの習慣と記録を120日つづけ、もう一度測って、自分の数字で確かめます。詳しくは<a href="/challenge.html">プログラムのご案内</a>をご覧ください。</div>
+      </details>
+      <details>
+        <summary>学ぶだけでも利用できますか？費用はかかりますか？</summary>
+        <div class="fa">骨密度について学べる情報ページ（<a href="/bone/">骨密度を学ぶ</a>）は、どなたでも無料でご覧いただけます。参加型の「120日 骨習慣プログラム」は有料の企画です。</div>
+      </details>
+      <details>
+        <summary>骨密度はどこで測れますか？</summary>
+        <div class="fa">医療機関や健診施設などで測定できます。検査の種類・精度・測定できる場所については<a href="/bone/measure/">骨密度の測り方</a>のページで詳しく紹介しています。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Final CTA ===================== -->
+<div class="final">
+  <section>
+    <div class="wrap">
+      <h2>まずは、いまの自分の数字を。</h2>
+      <p>知って、測って、続ける。あなたの「骨の習慣」を、今日から一緒に。</p>
+      <div class="cta-row">
+        <a href="/challenge.html" class="btn btn-primary">120日プログラムを見る →</a>
+        <a href="/bone/" class="btn btn-ghost">骨密度について学ぶ</a>
+      </div>
+      <div class="scarcity">第1期 参加者募集中 ／ 定員に達し次第、締め切ります</div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== Footer ===================== -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand mincho" style="color:var(--pine-deep);font-size:1rem">日本骨密度プロジェクト</div>
+      <div style="margin-top:6px;color:var(--amber);font-size:.72rem;letter-spacing:.16em">100歳まで、自分の脚で。</div>
+    </div>
+    <nav>
+      <a href="/">ホーム</a>
+      <a href="/about/">私たちについて</a>
+      <a href="/bone/">骨密度を学ぶ</a>
+      <a href="/challenge.html">プログラム</a>
+      <a href="/tokushoho.html">特商法表記</a>
+      <a href="/privacy.html">プライバシー</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="disclaimer">
+      ※本ページで紹介する「カルベール」は、カルシウムを含むミネラルウォーター（食品）です。
+      特定の疾病の治療・予防や、身体機能の改善を目的としたものではありません。
+      健康状態の変化には個人差があり、記載内容は効果を保証するものではありません。
+      骨密度など健康に関する不安がある場合は、医師等の専門家にご相談ください。
+    </p>
+    <p class="copy">© 日本骨密度プロジェクト（ヘルスィング株式会社）</p>
+  </div>
+</footer>
+
+</body>
+</html>
