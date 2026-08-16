@@ -515,8 +515,18 @@ a.person-link:hover .read-more{text-decoration:underline;}
 
 /* responsive */
 @media(max-width:1080px){
-  .nav{display:none;}
-  .menu-toggle{display:block;background:none;border:none;font-size:22px;color:var(--pine);cursor:pointer;}
+  .nav{
+    display:none;position:fixed;top:66px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(247,243,234,.98);
+    -webkit-backdrop-filter:saturate(140%) blur(8px);backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(33,63,51,.14);
+    padding:8px 0 16px;max-height:calc(100vh - 66px);overflow-y:auto;z-index:49;
+  }
+  .nav.open{display:flex;}
+  .nav a{font-size:16px;opacity:1;padding:14px 22px;border-bottom:1px solid rgba(0,0,0,.05);white-space:normal;}
+  .nav .btn-sm{margin:12px 22px 0;text-align:center;padding:13px 18px;font-size:15px;border-bottom:none;}
+  .menu-toggle{display:block;background:none;border:none;font-size:26px;line-height:1;color:var(--pine);cursor:pointer;padding:6px 8px;}
 }
 @media(max-width:880px){
   .hero-mission-v{display:none;}
@@ -615,7 +625,7 @@ section.edu{padding:70px 0;}
     <a class="brand" href="#top">
       <span class="mark">日本骨密度プロジェクト</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="siteNav">
       <a href="#why">なぜ骨密度</a>
       <a href="#people">参加者の声</a>
       <a href="#do">取り組み</a>
@@ -626,7 +636,7 @@ section.edu{padding:70px 0;}
       <a href="/bone/">骨密度を学ぶ</a>
       <a class="btn-sm" href="challenge.html">チャレンジに参加</a>
     </nav>
-    <button class="menu-toggle" aria-label="メニュー">≡</button>
+    <button class="menu-toggle" aria-label="メニュー" aria-controls="siteNav" aria-expanded="false">≡</button>
   </div>
 </header>
 
@@ -1248,10 +1258,33 @@ section.edu{padding:70px 0;}
 </div>
 
 <script>
-  // モバイルメニュー：まずは最寄セクションへスクロール（簡易）。本実装は後日。
-  document.querySelector('.menu-toggle')?.addEventListener('click',function(){
-    document.querySelector('#do')?.scrollIntoView({behavior:'smooth'});
-  });
+  // モバイルメニュー：開閉
+  (function(){
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.querySelector('.nav');
+    if (!btn || !nav) return;
+    var OPEN = '≡', CLOSE = '✕';
+    function setOpen(open){
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? CLOSE : OPEN;
+    }
+    btn.addEventListener('click', function(){
+      setOpen(!nav.classList.contains('open'));
+    });
+    // メニュー内のリンクをタップしたら閉じる
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ setOpen(false); });
+    });
+    // Escで閉じる
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') setOpen(false);
+    });
+    // 画面を広げたらリセット
+    window.addEventListener('resize', function(){
+      if (window.innerWidth > 1080) setOpen(false);
+    });
+  })();
 
   // モバイル追従CTA：ヒーローを過ぎたら表示（常時表示にするなら SHOW_AFTER を 0 に）
   var SHOW_AFTER = 560;
