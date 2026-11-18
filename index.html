@@ -629,6 +629,8 @@ section.edu{padding:70px 0;}
 .btn-lg{padding:18px 40px;font-size:17px;}
 .cta-sub{margin-top:14px;font-size:13px;color:var(--muted);letter-spacing:.03em;}
 
+.site-header .wrap{gap:32px;}
+@media(min-width:1081px) and (max-width:1320px){.nav{gap:20px;}}
 /* hero */
 .hero h1.brand-title{font-size:clamp(30px,4.6vw,54px);line-height:1.28;font-weight:800;}
 .hero-call{
@@ -658,6 +660,7 @@ section.edu{padding:70px 0;}
 .hero-cta{align-items:center;gap:14px 24px;margin-top:28px;}
 
 /* 共感 */
+.fit-card p{word-break:keep-all;overflow-wrap:anywhere;}
 .fit .fit-close{
   text-align:center;margin-top:34px;font-family:"Shippori Mincho B1",serif;font-weight:700;
   font-size:clamp(18px,3.4vw,23px);color:var(--pine);
@@ -739,6 +742,47 @@ section.edu{padding:70px 0;}
   .btn-lg{width:100%;justify-content:center;padding:18px 20px;}
   .center-head{margin-bottom:30px;}
 }
+
+/* ===== v3.1: はじめる前に知っておきたい3つのこと ===== */
+.know{background:var(--ivory);border-top:1px solid var(--line);}
+.know-item{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;padding:46px 0;border-top:1px dashed var(--line);}
+.know-item:first-of-type{border-top:none;padding-top:8px;}
+.know-item.rev .know-vis{order:2;}
+.know-q{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--amber);}
+.know-q b{font-family:"Shippori Mincho B1",serif;font-size:15px;color:#fff;background:var(--amber);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;letter-spacing:0;}
+.know-item h3{font-size:clamp(22px,4.2vw,30px);font-weight:800;color:var(--ink);line-height:1.5;margin:12px 0 6px;}
+.know-ans{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(17px,2.8vw,20px);color:var(--pine);line-height:1.75;margin-top:14px;}
+.know-pts{list-style:none;margin:20px 0 0;padding:0;}
+.know-pts li{position:relative;padding:11px 0 11px 26px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);line-height:1.85;}
+.know-pts li:first-child{border-top:none;}
+.know-pts li::before{content:"";position:absolute;left:4px;top:21px;width:8px;height:8px;border-radius:50%;background:var(--amber);}
+.know-pts li b{color:var(--ink);}
+.know-link{display:inline-block;margin-top:18px;font-size:14px;font-weight:700;color:var(--pine);text-decoration:none;border-bottom:1px solid var(--sage-line);padding-bottom:2px;}
+.know-link:hover{color:var(--amber);border-color:var(--amber);}
+.know-note{font-size:12px;color:#727c74;line-height:1.8;margin-top:14px;}
+.know-vis{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;}
+.know-vis.pad{padding:24px 24px 18px;}
+.know-vis img{width:100%;height:auto;display:block;}
+.know-vis svg{width:100%;height:auto;display:block;}
+.know-vis figcaption{font-size:12px;color:#727c74;text-align:center;line-height:1.7;margin-top:10px;}
+.know-vis.img figcaption{padding:0 18px 14px;}
+/* 年代ごとの目標 */
+.stage{display:flex;flex-direction:column;gap:10px;}
+.stage-row{display:grid;grid-template-columns:86px 1fr;align-items:center;gap:14px;}
+.stage-row .age{font-size:13.5px;font-weight:700;color:var(--muted);text-align:right;}
+.stage-row .bar{border-radius:12px;padding:13px 16px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:17px;line-height:1.4;}
+.stage-row .bar small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;font-size:12px;margin-top:3px;line-height:1.6;}
+.stage-row.s1 .bar{background:var(--sage);color:var(--pine-deep);}
+.stage-row.s2 .bar{background:#E9DCC4;color:#6E4A1E;}
+.stage-row.s3 .bar{background:var(--pine);color:#fff;}
+.stage-row.s3 .bar small{color:rgba(247,243,234,.85);}
+.stage-goal{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);text-align:center;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:17px;color:var(--pine);line-height:1.6;}
+.stage-goal span{color:var(--amber);}
+@media(max-width:880px){
+  .know-item{grid-template-columns:1fr;gap:24px;padding:40px 0;}
+  .know-item.rev .know-vis{order:0;}
+  .know-vis{max-width:520px;width:100%;margin:0 auto;}
+}
 </style>
 </head>
 <body>
@@ -749,9 +793,9 @@ section.edu{padding:70px 0;}
       <span class="mark">日本骨密度プロジェクト</span>
     </a>
     <nav class="nav" id="siteNav">
+      <a href="#know">よく聞かれること</a>
       <a href="#do">やること</a>
       <a href="#people">参加者の声</a>
-      <a href="#challenge">届くもの</a>
       <a href="guide.html">くわしいご案内</a>
       <a href="/bone/">骨密度を学ぶ</a>
       <a href="/about/">私たちについて</a>
@@ -796,23 +840,119 @@ section.edu{padding:70px 0;}
 <section class="fit" id="fit">
   <div class="wrap">
     <div class="center-head">
-      <h2>こんな気持ち、<br>ありませんか。</h2>
+      <h2>こんなこと、<br>思い当たりませんか。</h2>
     </div>
     <div class="fit-grid">
       <div class="fit-card">
         <div class="ck"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#C0813A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><p>骨密度が、気になりはじめた</p><small>健診で指摘された。身近な人の骨折を見た。きっかけは、人それぞれです。</small></div>
+        <div><p>自分の骨密度を、<wbr>知らない</p><small>測ったことがない。前に測ったのは、もう何年も前。骨密度は、健診の項目に入っていないことも多い検査です。</small></div>
       </div>
       <div class="fit-card">
         <div class="ck"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#C0813A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><p>何から始めればいいか、迷っている</p><small>特別な知識はいりません。「まず、測ってみる」から始まります。</small></div>
+        <div><p>今は元気。<wbr>でも、<wbr>この先が気になる</p><small>骨は、痛みも不調もないまま変わっていきます。元気なうちだからこそ、知っておきたいことがあります。</small></div>
       </div>
       <div class="fit-card">
         <div class="ck"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#C0813A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><p>ひとりでは、なかなか続かない</p><small>毎日のLINEと記録シートが、120日間そっと伴走します。</small></div>
+        <div><p>何から始めればいいか、<wbr>わからない</p><small>特別な知識も道具もいりません。はじまりは「まず、測ってみる」ことからです。</small></div>
       </div>
     </div>
-    <p class="fit-close">その気持ちが、はじまりの合図です。</p>
+    <p class="fit-close">ひとつでも当てはまったら、<br>いまが、はじめどきです。</p>
+  </div>
+</section>
+
+
+<!-- KNOW: はじめる前に知っておきたい3つのこと -->
+<section class="know" id="know">
+  <div class="wrap">
+    <div class="center-head">
+      <div class="kicker">はじめる前に</div>
+      <h2>よく聞かれる、<br>3つのこと。</h2>
+    </div>
+
+    <!-- Q1 -->
+    <div class="know-item">
+      <figure class="know-vis pad" aria-label="骨密度の結果のイメージ">
+        <svg viewBox="0 0 440 300" role="img">
+          <text x="0" y="18" fill="#C0813A" font-size="14" font-weight="700" letter-spacing="2" font-family="Zen Kaku Gothic New,sans-serif">骨密度の結果（イメージ）</text>
+          <text x="0" y="62" fill="#485249" font-size="16" font-family="Zen Kaku Gothic New,sans-serif">若い人（20〜44歳）の平均とくらべて</text>
+          <text x="440" y="66" fill="#2C5545" font-size="34" font-weight="800" text-anchor="end" font-family="Shippori Mincho B1,serif">86<tspan font-size="18">%</tspan></text>
+          <rect x="0" y="82" width="440" height="14" rx="7" fill="#F1ECE1"/>
+          <rect x="0" y="82" width="132" height="14" rx="7" fill="#E7C9C0"/>
+          <rect x="132" y="82" width="66" height="14" fill="#EFDDBF"/>
+          <rect x="198" y="82" width="242" height="14" rx="7" fill="#D6E2D2"/>
+          <rect x="198" y="82" width="20" height="14" fill="#D6E2D2"/>
+          <circle cx="290" cy="89" r="10" fill="#2C5545" stroke="#fff" stroke-width="3"/>
+          <text x="66" y="116" fill="#8c7b74" font-size="14" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">70%以下</text>
+          <text x="165" y="116" fill="#8c7b74" font-size="14" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">70〜80%</text>
+          <text x="319" y="116" fill="#2C5545" font-size="14" font-weight="700" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">80%以上（正常の目安）</text>
+          <line x1="0" y1="146" x2="440" y2="146" stroke="#E4DDCD" stroke-dasharray="4 4"/>
+          <text x="0" y="188" fill="#485249" font-size="16" font-family="Zen Kaku Gothic New,sans-serif">同じ年代・同じ性別の平均とくらべて</text>
+          <text x="440" y="192" fill="#C0813A" font-size="34" font-weight="800" text-anchor="end" font-family="Shippori Mincho B1,serif">104<tspan font-size="18">%</tspan></text>
+          <rect x="0" y="208" width="440" height="14" rx="7" fill="#F1ECE1"/>
+          <line x1="220" y1="202" x2="220" y2="228" stroke="#D9A55B" stroke-width="2" stroke-dasharray="3 3"/>
+          <text x="220" y="246" fill="#C0813A" font-size="14" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif">同年代の平均</text>
+          <circle cx="238" cy="215" r="10" fill="#C0813A" stroke="#fff" stroke-width="3"/>
+          <text x="0" y="288" fill="#727c74" font-size="13" font-family="Zen Kaku Gothic New,sans-serif">※数値は例です。表示のしかたは測定施設によって異なります。</text>
+        </svg>
+      </figure>
+      <div>
+        <div class="know-q"><b>1</b>測ったら、何がわかるの？</div>
+        <h3>骨密度を測ると、<br>何がわかるの？</h3>
+        <p class="know-ans">あなたの骨の「いま」が、<br>数字でわかります。</p>
+        <ul class="know-pts">
+          <li><b>若い人の平均とくらべて、何％か。</b>20〜44歳の平均を100％として表します（YAM値）。80％以上が正常の目安です。</li>
+          <li><b>同じ年代とくらべて、どのあたりか。</b>同年代・同性の平均と比べた数字が示されることも多くあります。</li>
+          <li><b>痛みのない変化に、気づける。</b>骨密度の低下には自覚症状がありません。体重や血圧と同じで、測ることでしか分かりません。</li>
+        </ul>
+        <a class="know-link" href="/bone/measure/">結果の読み方と、測れる場所をくわしく →</a>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="know-item rev">
+      <figure class="know-vis pad" aria-label="年代ごとの骨の目標">
+        <div class="stage">
+          <div class="stage-row s1"><span class="age">〜20代</span><div class="bar">増やす<small>骨をたくわえる、いちばん大事な時期</small></div></div>
+          <div class="stage-row s2"><span class="age">30〜40代</span><div class="bar">保つ<small>高い骨量を、そのまま保つ時期</small></div></div>
+          <div class="stage-row s3"><span class="age">50代〜</span><div class="bar">守る<small>減り方を、ゆるやかにしていく時期</small></div></div>
+        </div>
+        <p class="stage-goal">ゴールは数字ではなく、<br><span>自分の足で動ける毎日。</span></p>
+      </figure>
+      <div>
+        <div class="know-q"><b>2</b>上がれば、健康になるの？</div>
+        <h3>骨密度が上がったら、<br>健康になるの？</h3>
+        <p class="know-ans">骨の丈夫さを知る、大切な目安です。<br>でも、それだけで健康は決まりません。</p>
+        <ul class="know-pts">
+          <li><b>骨密度は、骨の丈夫さを数字で確かめられる、いちばんの手がかり</b>です。</li>
+          <li>ただし骨の強さは「骨質」にも左右されます。<b>骨密度が高ければ骨折しない、とは限りません。</b></li>
+          <li>年代によって目標も違います。50代からは<b>「増やす」より「守る」</b>が現実的な考え方です。</li>
+        </ul>
+        <p class="know-ans" style="font-size:16.5px;">だからこのプロジェクトは、数字を上げることではなく、毎日の習慣を続けて、自分で測って確かめることを大切にしています。</p>
+        <a class="know-link" href="/bone/about/">骨密度と「骨質」について、くわしく →</a>
+        <p class="know-note">※本プログラムおよびカルベールは、骨密度の改善や健康状態の改善を保証するものではありません。</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="know-item">
+      <figure class="know-vis img">
+        <img src="/assets/img/bone-measure-05-remodeling.webp" alt="古い骨がこわされ、新しい骨がつくられる「骨の作り替え」のイメージ" width="1600" height="900" loading="lazy">
+        <figcaption>古い骨をこわし、新しい骨をつくる。からだの中で、毎日くり返されています。</figcaption>
+      </figure>
+      <div>
+        <div class="know-q"><b>3</b>からだのお話</div>
+        <h3>骨は、<br>生きている。</h3>
+        <p class="know-ans">硬くて変わらないように見える骨も、<br>からだの中では毎日、生まれ変わっています。</p>
+        <ul class="know-pts">
+          <li><b>「歩く」の土台は、骨。</b>足腰の筋肉が働けるのは、それを支える骨があるからです。</li>
+          <li><b>骨は、毎日つくり替えられている。</b>古い骨をこわす細胞と、新しい骨をつくる細胞が働き、全身の骨は数年かけて少しずつ入れ替わっていきます。</li>
+          <li><b>必要なのは、材料と刺激と日光。</b>カルシウムなどの栄養、体重がかかる動き、そして日の光。どれも毎日の暮らしの中にあります。</li>
+        </ul>
+        <p class="know-ans" style="font-size:16.5px;">だから、今日の小さな習慣が、<br>これからのあなたの骨につながっていきます。</p>
+        <a class="know-link" href="/bone/improve/">食事・運動・日光の基本を、くわしく →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
